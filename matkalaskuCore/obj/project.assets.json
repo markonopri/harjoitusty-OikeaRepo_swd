@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "matkalaskuCore/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/matkalaskuCore.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/matkalaskuCore.dll": {}
-        }
-      }
-    }
+    ".NETCoreApp,Version=v3.1": {}
   },
-  "libraries": {
-    "matkalaskuCore/1.0.0": {
-      "type": "project",
-      "path": "../matkalaskuCore/matkalaskuCore.csproj",
-      "msbuildProject": "../matkalaskuCore/matkalaskuCore.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "matkalaskuCore >= 1.0.0"
-    ]
+    ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
     "C:\\Users\\JoniTanh\\.nuget\\packages\\": {}
@@ -32,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalasku\\matkalasku.csproj",
-      "projectName": "matkalasku",
-      "projectPath": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalasku\\matkalasku.csproj",
+      "projectUniqueName": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalaskuCore\\matkalaskuCore.csproj",
+      "projectName": "matkalaskuCore",
+      "projectPath": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalaskuCore\\matkalaskuCore.csproj",
       "packagesPath": "C:\\Users\\JoniTanh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalasku\\obj\\",
+      "outputPath": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalaskuCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\JoniTanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,11 +32,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {
-            "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalaskuCore\\matkalaskuCore.csproj": {
-              "projectPath": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalaskuCore\\matkalaskuCore.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

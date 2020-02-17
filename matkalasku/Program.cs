@@ -1,6 +1,7 @@
-﻿using System;
+﻿using matkalaskuCore;
+using System;
 using System.Collections;
-
+using System.Collections.Generic;
 
 namespace matkalasku
 {
@@ -42,8 +43,8 @@ namespace matkalasku
             ArrayList matkanPaluuaika = new ArrayList();
             ArrayList korvauksenSaaja = new ArrayList();
             ArrayList reitinKuvaus = new ArrayList();
-            ArrayList välimatkaKm = new ArrayList();
-            ArrayList matkustajienLukumäärä = new ArrayList();
+            List<double> välimatkaKm = new List<double>();
+            List<double> matkustajienLukumäärä = new List<double>();
 
             // Matkalasku-ohjelman käyttöliittymä.
             do
@@ -205,7 +206,7 @@ namespace matkalasku
                                 else if (valinta2 == 2)
                                 {
                                     Console.WriteLine("Syötä välimatka kilometreinä (km)");
-                                    string kilometriSyöte = Console.ReadLine();
+                                    int kilometriSyöte = Convert.ToInt32(Console.ReadLine());
 
                                     välimatkaKm.Add(kilometriSyöte);
                                 }
@@ -230,8 +231,8 @@ namespace matkalasku
                                 if (valinta2 == 1)
                                 {
                                     Console.WriteLine("Syötä matkustajien lukumäärä");
-                                    string matkustajaSyöte = Console.ReadLine();
-
+                                    int matkustajaSyöte = Convert.ToInt32(Console.ReadLine());
+                                    
                                     matkustajienLukumäärä.Add(matkustajaSyöte);
                                 }
                             }
@@ -241,9 +242,24 @@ namespace matkalasku
                     while (valinta != 7);
             
                 }
-                // Näytä matkalaskut -- Testinä toistaiseksi, että tulostus toimii
+                // Näytä matkalaskut -- Suurin osa testinä toistaiseksi, että tulostus toimii
                 else if (valinta == 2)
                 {
+                    // Kilometrikorvauksen laskin
+                    matkalaskuLuokat korvaus = new matkalaskuLuokat();
+                    double korvausMäärä = korvaus.Kilometrikorvaus(matkustajienLukumäärä, välimatkaKm);
+
+                    Console.WriteLine("-----------------------------------------------");
+                    Console.WriteLine("");
+                    Console.WriteLine("KILOMETRIKORVAUKSET:");
+                    Console.WriteLine("");
+                    Console.WriteLine("Henkilöiden lukumäärä: " + matkustajienLukumäärä[0] + " kpl");
+                    Console.WriteLine("Kilometrit: " + välimatkaKm[0] + " km");
+                    Console.WriteLine("EUR / km: 0.43 euroa");
+                    Console.WriteLine("Kokonaishinta: " + korvausMäärä + " euroa");
+                    Console.WriteLine("");
+                    Console.WriteLine("-----------------------------------------------");
+
                     foreach (var item in matkanLähtöaika)
                     {
                         Console.WriteLine("Matkan lähtöaika: " + item);
@@ -272,16 +288,6 @@ namespace matkalasku
                     foreach (var item in reitinKuvaus)
                     {
                         Console.WriteLine("Reitin kuvaus: " + item);
-                    }
-
-                    foreach (var item in välimatkaKm)
-                    {
-                        Console.WriteLine("Reitin välimatka (km): " + item);
-                    }
-
-                    foreach (var item in matkustajienLukumäärä)
-                    {
-                        Console.WriteLine("Matkustajien lukumäärä: " + item);
                     }
 
                     Console.WriteLine("");

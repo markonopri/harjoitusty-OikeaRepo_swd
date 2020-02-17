@@ -30,3 +30,6 @@ C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\n
 C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.AssemblyInfo.cs
 C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.dll
 C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.pdb
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\bin\Debug\netcoreapp3.1\matkalaskuCore.dll
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\bin\Debug\netcoreapp3.1\matkalaskuCore.pdb
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.csproj.CopyComplete
