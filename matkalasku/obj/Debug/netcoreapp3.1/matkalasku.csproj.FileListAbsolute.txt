@@ -19,3 +19,14 @@ C:\Users\Marko\source\repos\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.Assemb
 C:\Users\Marko\source\repos\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.AssemblyInfo.cs
 C:\Users\Marko\source\repos\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.dll
 C:\Users\Marko\source\repos\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.pdb
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\bin\Debug\netcoreapp3.1\matkalasku.exe
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\bin\Debug\netcoreapp3.1\matkalasku.deps.json
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\bin\Debug\netcoreapp3.1\matkalasku.runtimeconfig.json
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\bin\Debug\netcoreapp3.1\matkalasku.runtimeconfig.dev.json
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\bin\Debug\netcoreapp3.1\matkalasku.dll
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\bin\Debug\netcoreapp3.1\matkalasku.pdb
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.csprojAssemblyReference.cache
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.AssemblyInfoInputs.cache
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.AssemblyInfo.cs
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.dll
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalasku\obj\Debug\netcoreapp3.1\matkalasku.pdb

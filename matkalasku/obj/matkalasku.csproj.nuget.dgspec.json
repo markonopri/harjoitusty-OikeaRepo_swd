@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marko\\source\\repos\\matkalasku\\matkalasku.csproj": {}
+    "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalasku\\matkalasku.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marko\\source\\repos\\matkalasku\\matkalasku.csproj": {
+    "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalasku\\matkalasku.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marko\\source\\repos\\matkalasku\\matkalasku.csproj",
+        "projectUniqueName": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalasku\\matkalasku.csproj",
         "projectName": "matkalasku",
-        "projectPath": "C:\\Users\\Marko\\source\\repos\\matkalasku\\matkalasku.csproj",
-        "packagesPath": "C:\\Users\\Marko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marko\\source\\repos\\matkalasku\\obj\\",
+        "projectPath": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalasku\\matkalasku.csproj",
+        "packagesPath": "C:\\Users\\JoniTanh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalasku\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JoniTanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
