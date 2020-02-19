@@ -44,7 +44,7 @@ namespace matkalasku
             ArrayList matkanLähtöaika = new ArrayList();
             ArrayList matkanPaluuaika = new ArrayList();
             ArrayList korvauksenSaaja = new ArrayList();
-            ArrayList matkanLuomisPmv = new ArrayList();
+            ArrayList matkanLuomisPmv = new ArrayList();    // Lisäsin tähän uuden arrayn päivämäärälle
             ArrayList reitinKuvaus = new ArrayList();
             List<double> välimatkaKm = new List<double>();
             List<double> matkustajienLukumäärä = new List<double>();
