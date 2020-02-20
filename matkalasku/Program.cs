@@ -48,6 +48,7 @@ namespace matkalasku
             ArrayList reitinKuvaus = new ArrayList();
             List<double> välimatkaKm = new List<double>();
             List<double> matkustajienLukumäärä = new List<double>();
+            List<int> matkanKestoMin = new List<int>();
 
             // Matkalasku-ohjelman käyttöliittymä.
             do
@@ -84,37 +85,42 @@ namespace matkalasku
                         // Matkan lähtö- ja paluuaika.
                         if (valinta == 1)
                         {
-                            do
-                            {
-                                Console.WriteLine("-Matkan lähtö- ja paluuaika-");
-                                Console.WriteLine("------------");
-                                Console.WriteLine("Valitse jokin seuraavista toimminnoista: \n");
-                                Console.WriteLine("1. Lisää matkan lähtöaika");
-                                Console.WriteLine("2. Lisää matkan paluuaika");
-                                Console.WriteLine("3. Palaa etusivulle");
-                                valinta2 = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("");
+                            // Matkan lähtö- ja paluuaika
+                            Console.WriteLine("-Matkan lähtö- ja paluuaika-");
+                            Console.WriteLine("------------");
 
-                                // Matkan lähtöaika
-                                if (valinta2 == 1)
-                                {
-                                    Console.WriteLine("Syötä matkan lähtöaika");
-                                    string lähtöaikaSyöte = Console.ReadLine();
-                                    
-                                    matkanLähtöaika.Add(lähtöaikaSyöte);
-                                }
+                            // Matkan lähtöaika
+                            Console.WriteLine("Anna lähtöaika (pp.kk.vvvv klo hh.mm)");
+                            string lähtöpvm = Console.ReadLine();
+                            matkanLähtöaika.Add(lähtöpvm);
+                            int lähtöpäivä = Int32.Parse(lähtöpvm.Substring(0, 2));
+                            int lähtökuukausi = Int32.Parse(lähtöpvm.Substring(3, 2));
+                            int lähtövuosi = Int32.Parse(lähtöpvm.Substring(6, 4));
+                            int lähtötunti = Int32.Parse(lähtöpvm.Substring(15, 2));
+                            int lähtöminuutti = Int32.Parse(lähtöpvm.Substring(18, 2));
+                             
+                            // Matkan paluuaika
+                            Console.WriteLine("Anna paluuaika (pp.kk.vvvv klo hh.mm)");
+                            string paluupvm = Console.ReadLine();
+                            matkanPaluuaika.Add(paluupvm);
+                            int paluupäivä = Int32.Parse(paluupvm.Substring(0, 2));
+                            int paluukuukausi = Int32.Parse(paluupvm.Substring(3, 2));
+                            int paluuvuosi = Int32.Parse(paluupvm.Substring(6, 4));
+                            int paluutunti = Int32.Parse(paluupvm.Substring(15, 2));
+                            int paluuminuutti = Int32.Parse(paluupvm.Substring(18, 2));
+                                
+                            // vuosi, kuukausi, päivä, tunti, minuutti, sekunti
+                            DateTime a = new DateTime(lähtövuosi, lähtökuukausi, lähtöpäivä, lähtötunti, lähtöminuutti, 00);
+                            DateTime b = new DateTime(paluuvuosi, paluukuukausi, paluupäivä, paluutunti, paluuminuutti, 00);
+                             
+                            var matkanKesto = b.Subtract(a).TotalMinutes;
+                            int matkanKestoSyöte = Convert.ToInt32(matkanKesto);
+                            matkanKestoMin.Add(matkanKestoSyöte);
+                            Console.WriteLine("");
 
-                                // Matkan paluuaika
-                                else if (valinta2 == 2)
-                                {
-                                    Console.WriteLine("Syötä matkan paluuaika");
-                                    string paluuaikaSyöte = Console.ReadLine();
-                                    Console.WriteLine("");
+                             // Console.WriteLine("Matkakestää: " + matkanKesto + " minuuttia"); - testimuistina                       
+                            
 
-                                    matkanPaluuaika.Add(paluuaikaSyöte);
-                                }
-                            }
-                            while (valinta2 != 3);
                         }
 
                         // Matkan tarkoitus ja lisätiedot.
@@ -287,6 +293,11 @@ namespace matkalasku
                     Console.WriteLine("Kokonaishinta: " + korvausMäärä + " euroa");
                     Console.WriteLine("");
                     Console.WriteLine("-----------------------------------------------");
+
+                    foreach (var item in matkanKestoMin)
+                    {
+                        Console.WriteLine("Matka kestää: " + item + " min");
+                    }
 
                     foreach (var item in matkanLähtöaika)
                     {
