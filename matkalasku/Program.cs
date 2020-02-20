@@ -46,7 +46,8 @@ namespace matkalasku
             ArrayList korvauksenSaaja = new ArrayList();
             ArrayList matkanLuomisPmv = new ArrayList();    // Lisäsin tähän uuden arrayn päivämäärälle
             ArrayList reitinKuvaus = new ArrayList();
-            List<double> välimatkaKm = new List<double>();
+            List<double> välimatkaKm = new List<double>(); // kilometrikorvausta varten
+            List<int> välimatkaKm2 = new List<int>(); // päivärahakorvausta varten
             List<double> matkustajienLukumäärä = new List<double>();
             List<int> matkanKestoMin = new List<int>();
 
@@ -243,6 +244,7 @@ namespace matkalasku
                                     int kilometriSyöte = Convert.ToInt32(Console.ReadLine());
 
                                     välimatkaKm.Add(kilometriSyöte);
+                                    välimatkaKm2.Add(kilometriSyöte);
                                 }
                                
                             }
@@ -294,20 +296,17 @@ namespace matkalasku
                     Console.WriteLine("");
                     Console.WriteLine("-----------------------------------------------");
 
-                    foreach (var item in matkanKestoMin)
-                    {
-                        Console.WriteLine("Matka kestää: " + item + " min");
-                    }
+                    // Päivärahakorvauksen laskin                 
+                    matkalaskuLuokat päivärahaKorvaus = new matkalaskuLuokat();
+                    int päivärahaKorvausMäärä = päivärahaKorvaus.PäivärahaKorvaus(matkanKestoMin, välimatkaKm2);
+                    Console.WriteLine("Päivärahojen kokonaishinta: " + päivärahaKorvausMäärä + " euroa");
+                    Console.WriteLine("");
+                    Console.WriteLine("-----------------------------------------------");
+                    Console.WriteLine("");
 
-                    foreach (var item in matkanLähtöaika)
-                    {
-                        Console.WriteLine("Matkan lähtöaika: " + item);
-                    }
+                    // Maksetaan yhteensä
+                    Console.WriteLine("Maksetaan yhteensä: " + (korvausMäärä + päivärahaKorvausMäärä) + " euroa");
 
-                    foreach (var item in matkanPaluuaika)
-                    {
-                        Console.WriteLine("Matkan paluuaika: " + item);
-                    }
 
                     foreach (var item in matkanTarkoitus)
                     {
