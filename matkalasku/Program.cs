@@ -35,10 +35,24 @@ namespace matkalasku
         {
 
 
-            int valinta;
+           
+int valinta;
             int valinta2;// ilman tätä esiinty bugeja, joten laitoin
             int valinta3;
-            int muokkausValinta; // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            string onMaksettu = ".[MAKSETTU]";
+            string eiMaksettu = "[EI MAKSETTU]";
+            int muokkausValintaOne; // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int muokkausValintaTwo; // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int muokkausValintaThree;   // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int muokkausValintaFour;    // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int muokkausValintaFive;    // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int muokkausValintaSix; // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int muokkausValintaSeven;   // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int muokkausValintaEight;   // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int muokkausValintaNine;    // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int muokkausValintaTen; // muokkaamiselle tehty olio josta voi valita mitä laskua haluaa käsitellä
+            int laskunStatusValinta;
+            bool laskunStatus = false;
             ArrayList matkanTarkoitus = new ArrayList();
             ArrayList matkanLisätiedot = new ArrayList();
             ArrayList matkanLähtöaika = new ArrayList();
@@ -46,10 +60,12 @@ namespace matkalasku
             ArrayList korvauksenSaaja = new ArrayList();
             ArrayList matkanLuomisPmv = new ArrayList();    // Lisäsin tähän uuden arrayn päivämäärälle
             ArrayList reitinKuvaus = new ArrayList();
+            ArrayList matkalaskuStatus = new ArrayList();
             List<double> välimatkaKm = new List<double>(); // kilometrikorvausta varten
             List<int> välimatkaKm2 = new List<int>(); // päivärahakorvausta varten
             List<double> matkustajienLukumäärä = new List<double>();
             List<int> matkanKestoMin = new List<int>();
+            matkalaskuStatus.Add(eiMaksettu);
 
             // Matkalasku-ohjelman käyttöliittymä.
             do
@@ -349,6 +365,7 @@ namespace matkalasku
                         Console.WriteLine("8. Matkustajien lukumäärä");
                         Console.WriteLine("9. Matkalaskun päivämäärä");
                         Console.WriteLine("10. Palaa etusivulle");
+                        Console.WriteLine("11. Matkalaskun status");
                         valinta3 = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("");
 
@@ -363,10 +380,10 @@ namespace matkalasku
                                 Console.WriteLine("2. Toinen");
                                 Console.WriteLine("3. Kolmas");
                                 Console.WriteLine("4. Palaa etusivulle");
-                                muokkausValinta = Convert.ToInt32(Console.ReadLine());
+                                muokkausValintaOne = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("");
 
-                                if(muokkausValinta == 1)
+                                if(muokkausValintaOne == 1)
                                 {
                                     Console.WriteLine("Nykyinen Lähtöaika: " + matkanLähtöaika[0]);
                                     Console.WriteLine("Syötä uusi lähtöaika: ");
@@ -374,7 +391,7 @@ namespace matkalasku
 
                                     matkanLähtöaika[0] = lähtöaikaSyöte;            
                                 }
-                                else if(muokkausValinta == 2)
+                                else if(muokkausValintaOne == 2)
                                 {
                                     Console.WriteLine("Nykyinen Lähtöaika: " + matkanLähtöaika[1]);
                                     Console.WriteLine("Syötä uusi lähtöaika: ");
@@ -382,7 +399,7 @@ namespace matkalasku
 
                                     matkanLähtöaika[1] = lähtöaikaSyöte;
                                 }
-                                else if(muokkausValinta == 3)
+                                else if(muokkausValintaOne == 3)
                                 {
                                     Console.WriteLine("Nykyinen Lähtöaika: " + matkanLähtöaika[2]);
                                     Console.WriteLine("Syötä uusi lähtöaika: ");
@@ -391,7 +408,7 @@ namespace matkalasku
                                     matkanLähtöaika[2] = lähtöaikaSyöte;
                                 }
                             }
-                            while (muokkausValinta != 4);
+                            while (muokkausValintaOne != 4);
 
                         }
                         else if(valinta3 ==2) //Matkan paluuaika
@@ -407,10 +424,10 @@ namespace matkalasku
                                     Console.WriteLine("2. Toinen");
                                     Console.WriteLine("3. Kolmas");
                                     Console.WriteLine("4. Palaa etusivulle");
-                                    muokkausValinta = Convert.ToInt32(Console.ReadLine());
+                                    muokkausValintaTwo = Convert.ToInt32(Console.ReadLine());
                                     Console.WriteLine("");
 
-                                    if (muokkausValinta == 1)
+                                    if (muokkausValintaTwo == 1)
                                     {
                                         Console.WriteLine("Nykyinen Paluuaika: " + matkanPaluuaika[0]);
                                         Console.WriteLine("Syötä uusi Paluuaika: ");
@@ -418,7 +435,7 @@ namespace matkalasku
 
                                         matkanPaluuaika[0] = paluuaikaSyöte;
                                     }
-                                    else if (muokkausValinta == 2)
+                                    else if (muokkausValintaTwo == 2)
                                     {
                                         Console.WriteLine("Nykyinen paluuaika: " + matkanPaluuaika[1]);
                                         Console.WriteLine("Syötä uusi paluuaika: ");
@@ -426,7 +443,7 @@ namespace matkalasku
 
                                         matkanPaluuaika[1] = paluuaikaSyöte;
                                     }
-                                    else if (muokkausValinta == 3)
+                                    else if (muokkausValintaTwo == 3)
                                     {
                                         Console.WriteLine("Nykyinen paluuaika: " + matkanPaluuaika[2]);
                                         Console.WriteLine("Syötä uusi paluuaika: ");
@@ -436,7 +453,7 @@ namespace matkalasku
                                     }
                                 
                             }
-                            while (muokkausValinta != 4);
+                            while (muokkausValintaTwo != 4);
                         }
                         else if( valinta3 == 3) // Matkan tarkoitus
                         {
@@ -451,10 +468,10 @@ namespace matkalasku
                                 Console.WriteLine("2. Toinen");
                                 Console.WriteLine("3. Kolmas");
                                 Console.WriteLine("4. Palaa etusivulle");
-                                muokkausValinta = Convert.ToInt32(Console.ReadLine());
+                                muokkausValintaThree = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("");
 
-                                if (muokkausValinta == 1)
+                                if (muokkausValintaThree == 1)
                                 {
                                     Console.WriteLine("Nykyinen matkantarkoitus: " + matkanTarkoitus[0]);
                                     Console.WriteLine("Syötä uusi matkantarkoitus: ");
@@ -462,7 +479,7 @@ namespace matkalasku
 
                                     matkanTarkoitus[0] = tarkoitusSyöte;
                                 }
-                                else if (muokkausValinta == 2)
+                                else if (muokkausValintaThree == 2)
                                 {
                                     Console.WriteLine("Nykyinen matkantarkoitus: " + matkanTarkoitus[1]);
                                     Console.WriteLine("Syötä uusi matkantarkoitus: ");
@@ -470,7 +487,7 @@ namespace matkalasku
 
                                     matkanTarkoitus[1] = tarkoitusSyöte;
                                 }
-                                else if (muokkausValinta == 3)
+                                else if (muokkausValintaThree == 3)
                                 {
                                     Console.WriteLine("Nykyinen matkantarkoitus: " + matkanTarkoitus[2]);
                                     Console.WriteLine("Syötä uusi matkantarkoitus: ");
@@ -480,7 +497,7 @@ namespace matkalasku
                                 }
 
                             }
-                            while (muokkausValinta != 4);
+                            while (muokkausValintaThree != 4);
                         }
                         else if(valinta3 == 4)  // Matkan lisätiedot
                         {
@@ -495,10 +512,10 @@ namespace matkalasku
                                 Console.WriteLine("2. Toinen");
                                 Console.WriteLine("3. Kolmas");
                                 Console.WriteLine("4. Palaa etusivulle");
-                                muokkausValinta = Convert.ToInt32(Console.ReadLine());
+                                muokkausValintaFour = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("");
 
-                                if (muokkausValinta == 1)
+                                if (muokkausValintaFour == 1)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + matkanLisätiedot[0]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -506,7 +523,7 @@ namespace matkalasku
 
                                     matkanLisätiedot[0] = lisätietoSyöte;
                                 }
-                                else if (muokkausValinta == 2)
+                                else if (muokkausValintaFour == 2)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + matkanLisätiedot[1]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -514,7 +531,7 @@ namespace matkalasku
 
                                     matkanLisätiedot[1] = lisätietoSyöte;
                                 }
-                                else if (muokkausValinta == 3)
+                                else if (muokkausValintaFour == 3)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + matkanLisätiedot[2]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -524,7 +541,7 @@ namespace matkalasku
                                 }
 
                             }
-                            while (muokkausValinta != 4);
+                            while (muokkausValintaFour != 4);
                         }
                         else if(valinta3 == 5)  //Matkakorvauksen saaja
                         {
@@ -539,10 +556,10 @@ namespace matkalasku
                                 Console.WriteLine("2. Toinen");
                                 Console.WriteLine("3. Kolmas");
                                 Console.WriteLine("4. Palaa etusivulle");
-                                muokkausValinta = Convert.ToInt32(Console.ReadLine());
+                                muokkausValintaFive = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("");
 
-                                if (muokkausValinta == 1)
+                                if (muokkausValintaFive == 1)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + korvauksenSaaja[0]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -550,7 +567,7 @@ namespace matkalasku
 
                                     korvauksenSaaja[0] = korvausSyöte;
                                 }
-                                else if (muokkausValinta == 2)
+                                else if (muokkausValintaFive == 2)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + korvauksenSaaja[1]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -558,7 +575,7 @@ namespace matkalasku
 
                                     korvauksenSaaja[1] = korvausSyöte;
                                 }
-                                else if (muokkausValinta == 3)
+                                else if (muokkausValintaFive == 3)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + korvauksenSaaja[2]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -568,7 +585,7 @@ namespace matkalasku
                                 }
 
                             }
-                            while (muokkausValinta != 4);
+                            while (muokkausValintaFive != 4);
                         }
                         else if(valinta3 == 6)  //Reitin kuvaus
                         {
@@ -583,10 +600,10 @@ namespace matkalasku
                                 Console.WriteLine("2. Toinen");
                                 Console.WriteLine("3. Kolmas");
                                 Console.WriteLine("4. Palaa etusivulle");
-                                muokkausValinta = Convert.ToInt32(Console.ReadLine());
+                                muokkausValintaSix = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("");
 
-                                if (muokkausValinta == 1)
+                                if (muokkausValintaSix == 1)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + reitinKuvaus[0]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -594,7 +611,7 @@ namespace matkalasku
 
                                     reitinKuvaus[0] = reittiSyöte;
                                 }
-                                else if (muokkausValinta == 2)
+                                else if (muokkausValintaSix == 2)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + reitinKuvaus[1]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -602,7 +619,7 @@ namespace matkalasku
 
                                     reitinKuvaus[1] = reittiSyöte;
                                 }
-                                else if (muokkausValinta == 3)
+                                else if (muokkausValintaSix == 3)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + reitinKuvaus[2]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -612,7 +629,7 @@ namespace matkalasku
                                 }
 
                             }
-                            while (muokkausValinta != 4);
+                            while (muokkausValintaSix != 4);
                         }
                         else if(valinta3 == 7)  // Reitin välimatka (kilometrit)
                         {
@@ -627,10 +644,10 @@ namespace matkalasku
                                 Console.WriteLine("2. Toinen");
                                 Console.WriteLine("3. Kolmas");
                                 Console.WriteLine("4. Palaa etusivulle");
-                                muokkausValinta = Convert.ToInt32(Console.ReadLine());
+                                muokkausValintaSeven = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("");
 
-                                if (muokkausValinta == 1)
+                                if (muokkausValintaSeven == 1)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + välimatkaKm[0]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -638,7 +655,7 @@ namespace matkalasku
 
                                     välimatkaKm[0] = kilometriSyöte;
                                 }
-                                else if (muokkausValinta == 2)
+                                else if (muokkausValintaSeven == 2)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + välimatkaKm[1]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -646,7 +663,7 @@ namespace matkalasku
 
                                     välimatkaKm[1] = kilometriSyöte;
                                 }
-                                else if (muokkausValinta == 3)
+                                else if (muokkausValintaSeven == 3)
                                 {
                                     Console.WriteLine("Nykyinen matkan lisätieto: " + välimatkaKm[2]);
                                     Console.WriteLine("Syötä uusi lisätieto: ");
@@ -656,7 +673,7 @@ namespace matkalasku
                                 }
 
                             }
-                            while (muokkausValinta != 4);
+                            while (muokkausValintaSeven != 4);
                         }
                         else if(valinta3 == 8)  //Matkustajien lukumäärä
                         {
@@ -671,10 +688,10 @@ namespace matkalasku
                                 Console.WriteLine("2. Toinen");
                                 Console.WriteLine("3. Kolmas");
                                 Console.WriteLine("4. Palaa etusivulle");
-                                muokkausValinta = Convert.ToInt32(Console.ReadLine());
+                                muokkausValintaEight = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("");
 
-                                if (muokkausValinta == 1)
+                                if (muokkausValintaEight == 1)
                                 {
                                     Console.WriteLine("Nykyinen matkustajien määrä: " + matkustajienLukumäärä[0]);
                                     Console.WriteLine("Syötä uusi matkustajien määrä: ");
@@ -682,7 +699,7 @@ namespace matkalasku
 
                                     matkustajienLukumäärä[0] = matkustajaSyöte;
                                 }
-                                else if (muokkausValinta == 2)
+                                else if (muokkausValintaEight == 2)
                                 {
                                     Console.WriteLine("Nykyinen matkustajien määrä: " + matkustajienLukumäärä[1]);
                                     Console.WriteLine("Syötä uusi matkustajien määrä: ");
@@ -690,7 +707,7 @@ namespace matkalasku
 
                                     matkustajienLukumäärä[1] = matkustajaSyöte;
                                 }
-                                else if (muokkausValinta == 3)
+                                else if (muokkausValintaEight == 3)
                                 {
                                     Console.WriteLine("Nykyinen matkustajien määrä: " + matkustajienLukumäärä[2]);
                                     Console.WriteLine("Syötä uusi matkustajien määrä: ");
@@ -700,7 +717,7 @@ namespace matkalasku
                                 }
 
                             }
-                            while (muokkausValinta != 4);
+                            while (muokkausValintaEight != 4);
                         }
                         else if(valinta3 == 9)  // Matkalaskun päivämäärä
                         {
@@ -715,10 +732,10 @@ namespace matkalasku
                                 Console.WriteLine("2. Toinen");
                                 Console.WriteLine("3. Kolmas");
                                 Console.WriteLine("4. Palaa etusivulle");
-                                muokkausValinta = Convert.ToInt32(Console.ReadLine());
+                                muokkausValintaNine = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("");
 
-                                if (muokkausValinta == 1)
+                                if (muokkausValintaNine == 1)
                                 {
                                     Console.WriteLine("Nykyinen matkalaskun päivämäärä: " + matkanLuomisPmv[0]);
                                     Console.WriteLine("Syötä matkalaskun päivämäärä muodosa (pp.kk.vvvv klo tt.mm)");
@@ -726,7 +743,7 @@ namespace matkalasku
 
                                     matkanLuomisPmv[0] = pmvSyöte;
                                 }
-                                else if (muokkausValinta == 2)
+                                else if (muokkausValintaNine == 2)
                                 {
                                     Console.WriteLine("Nykyinen matkalaskun päivämäärä: " + matkanLuomisPmv[1]);
                                     Console.WriteLine("Syötä matkalaskun päivämäärä muodosa (pp.kk.vvvv klo tt.mm)");
@@ -734,7 +751,7 @@ namespace matkalasku
 
                                     matkanLuomisPmv[1] = pmvSyöte;
                                 }
-                                else if (muokkausValinta == 3)
+                                else if (muokkausValintaNine == 3)
                                 {
                                     Console.WriteLine("Nykyinen matkalaskun päivämäärä: " + matkanLuomisPmv[2]);
                                     Console.WriteLine("Syötä matkalaskun päivämäärä muodosa (pp.kk.vvvv klo tt.mm)");
@@ -744,19 +761,159 @@ namespace matkalasku
                                 }
 
                             }
-                            while (muokkausValinta != 4);
+                            while (muokkausValintaNine != 4);
+                        }
+                        else if (valinta3 == 10) // Laskun statuksen muokkaaminen [MAKSETTU] / [EI MAKSETTU]
+                        {
+                            do
+                            {
+                                // Sitten valitaan mitä laskua halutaan muokata. Teen tähän mahdollisuuden kolmelle laskulle.
+
+
+                                Console.WriteLine("-Valitse lasku-: ");
+                                Console.WriteLine("---------------");
+                                Console.WriteLine("1. Ensimmäinen");
+                                Console.WriteLine("2. Toinen");
+                                Console.WriteLine("3. Kolmas");
+                                Console.WriteLine("4. Palaa etusivulle");
+                                muokkausValintaTen = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("");
+
+                                if (muokkausValintaTen == 1)
+                                {
+                                    do
+                                    {
+                                        //foreach (var item in matkalaskuStatus)
+                                        //{
+                                        //    Console.WriteLine("debug: "  + item);
+                                        //}
+                                        Console.WriteLine("-Matkalaskun status-");
+                                        Console.WriteLine("--------------------\n");
+                                        Console.WriteLine("onko matkalasku maksettu: \n");
+                                        Console.WriteLine("1.Kyllä");
+                                        Console.WriteLine("2.Ei");
+                                        //Console.WriteLine("3.Näytä status");
+                                        Console.WriteLine("3.Palaa etusivulle");
+
+                                        laskunStatusValinta = Convert.ToInt32(Console.ReadLine());
+
+                                        if (laskunStatusValinta == 1)
+                                        {
+                                            //Console.WriteLine(matkalaskuStatus[0]);
+                                            matkalaskuStatus.Add(onMaksettu);
+                                            //laskunStatus = true;
+                                        }
+                                        else if (laskunStatusValinta == 2)
+                                        {
+                                            //Console.WriteLine(matkalaskuStatus[0]);
+                                            matkalaskuStatus.Add(eiMaksettu);
+                                            //laskunStatus = false;
+                                        }
+                                        //else if (laskunStatusValinta == 3)
+                                        //{
+                                            //foreach (var item in matkalaskuStatus)
+                                            //{
+                                            //  Console.WriteLine("debug: " + item);
+                                            //}
+                                            //Console.WriteLine("Debug: " + matkalaskuStatus[0]);
+
+                                        //}
+                                    }
+                                    while (laskunStatusValinta != 3);
+                                }
+                                else if (muokkausValintaTen == 2)
+                                {
+                                    do
+                                    {
+                                        //foreach (var item in matkalaskuStatus)
+                                        //{
+                                        //    Console.WriteLine("debug: " + item);
+                                        //}
+                                        Console.WriteLine("-Matkalaskun status-");
+                                        Console.WriteLine("--------------------\n");
+                                        Console.WriteLine("onko matkalasku maksettu: \n");
+                                        Console.WriteLine("1.Kyllä");
+                                        Console.WriteLine("2.Ei");
+                                        //Console.WriteLine("3.Näytä status");  //testiä
+                                        Console.WriteLine("3.Palaa etusivulle");
+
+                                        laskunStatusValinta = Convert.ToInt32(Console.ReadLine());
+
+                                        if (laskunStatusValinta == 1)
+                                        {
+                                            //Console.WriteLine(matkalaskuStatus[0]);
+                                            matkalaskuStatus.Add(onMaksettu);
+                                            //laskunStatus = true;
+                                        }
+                                        else if (laskunStatusValinta == 2)
+                                        {
+                                            //Console.WriteLine(matkalaskuStatus[0]);
+                                            matkalaskuStatus.Add(eiMaksettu);
+                                            //laskunStatus = false;
+                                        }
+                                        //else if (laskunStatusValinta == 3)
+                                        //{
+                                            //foreach (var item in matkalaskuStatus)
+                                            //{
+                                            //    Console.WriteLine("debug: " + item);
+                                            //}
+                                            //Console.WriteLine("Debug: " + matkalaskuStatus[1]);
+
+                                        //}
+                                    }
+                                    while (laskunStatusValinta != 3);
+                                }
+                                else if (muokkausValintaTen == 3)
+                                {
+                                    do
+                                    {
+                                        //foreach (var item in matkalaskuStatus)        // Testi varten testiä, korjaan pois kun valmis
+                                        //{
+                                        //    Console.WriteLine("debug: " + item);
+                                        //}
+                                        Console.WriteLine("-Matkalaskun status-");
+                                        Console.WriteLine("--------------------\n");
+                                        Console.WriteLine("onko matkalasku maksettu: \n");
+                                        Console.WriteLine("1.Kyllä");
+                                        Console.WriteLine("2.Ei");
+                                        //Console.WriteLine("3.Näytä status");  // Testiä varten testiä, korjaa pois kun valmis
+                                        Console.WriteLine("3.Palaa etusivulle");
+                                        
+                                        laskunStatusValinta = Convert.ToInt32(Console.ReadLine());
+
+                                        if (laskunStatusValinta == 1)
+                                        {
+                                            //Console.WriteLine(matkalaskuStatus[0]);
+                                            matkalaskuStatus.Add(onMaksettu);
+                                            //laskunStatus = true;
+                                        }
+                                        else if (laskunStatusValinta == 2)
+                                        {
+                                            //Console.WriteLine(matkalaskuStatus[0]);
+                                            matkalaskuStatus.Add(eiMaksettu);
+                                            //laskunStatus = false;
+                                        }
+                                        //else if (laskunStatusValinta == 3)        // Testiä varten, korjaan pois kun saan valmiiksi
+                                        //{
+                                            //foreach (var item in matkalaskuStatus)
+                                            //{
+                                            //    Console.WriteLine("debug: " + item);
+                                            //}
+                                            //Console.WriteLine("Debug: " + matkalaskuStatus[2]);
+
+                                        //}
+                                    }
+                                    while (laskunStatusValinta != 3);
+                                }
+
+                            }
+                            while (muokkausValintaTen != 4);
                         }
                     }
-                    while (valinta != 10);
+                    while (valinta3 != 11);
+                    
                 }
                 
-
-
-
-
-
-
-
             }
             while (valinta != 5);
             return 0;
