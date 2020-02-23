@@ -79,7 +79,7 @@ namespace matkalaskuCore
                 Console.WriteLine("Osapäivärahakorvauksia " + yliYksiPäiväJaKaksiTuntiaKorvaus + " kpl");
                 Console.WriteLine("Yksikköhinta " + osaPäiväRahaHinta + " euroa");
                 Console.WriteLine("Osapäivärahojen kokonaishinta: " + (yliYksiPäiväJaKaksiTuntiaKorvaus * kokoPäiväRahaHinta) + " euroa");
-                korvauksetYhteensä = ((päivät * kokoPäiväRahaHinta) + (yliYksiPäiväJaKaksiTuntiaKorvaus * kokoPäiväRahaHinta));
+                korvauksetYhteensä = ((päivät * kokoPäiväRahaHinta) + (yliYksiPäiväJaKaksiTuntiaKorvaus * osaPäiväRahaHinta));
 
             }
             else if (päivät > 0)
