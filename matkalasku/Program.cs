@@ -364,8 +364,8 @@ int valinta;
                         Console.WriteLine("7. Reitin kilometrit");
                         Console.WriteLine("8. Matkustajien lukumäärä");
                         Console.WriteLine("9. Matkalaskun päivämäärä");
-                        Console.WriteLine("10. Palaa etusivulle");
-                        Console.WriteLine("11. Matkalaskun status");
+                        Console.WriteLine("10. Matkalaskun status");
+                        Console.WriteLine("11. Palaa etusivulle");
                         valinta3 = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("");
 

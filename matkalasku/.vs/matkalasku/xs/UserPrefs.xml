@@ -1,22 +1,10 @@
 ﻿<Properties StartupConfiguration="{C8467869-22F2-472F-B46B-7D92C81586CB}|Default">
   <MonoDevelop.Ide.ItemProperties.matkalasku PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../matkalaskuCore/matkalaskuLuokat.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="372" Column="64" />
       <File FileName="../matkalaskuCore/matkalaskuLuokat.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="matkalasku" expanded="True">
-            <Node name="matkalasku" expanded="True" />
-            <Node name="matkalaskuCore" expanded="True">
-              <Node name="matkalaskuLuokat.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
