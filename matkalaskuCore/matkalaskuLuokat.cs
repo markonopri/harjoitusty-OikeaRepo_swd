@@ -11,18 +11,19 @@ namespace matkalaskuCore
         // -> (kilometrit, henkilöiden lkm., laskemiseen käytetty korvauksen määrä per kilometri)
 
         // Kilometrikorvauslaskuri
-        public double Kilometrikorvaus(List<double> matkustajienLukumäärä, List<double> välimatkaKm)
+        // Kilometrikorvauslaskuri
+        public double Kilometrikorvaus(double matkustajienLukumäärä, double välimatkaKm)
         {
             double kilometrikorvausPerKm = 0.43;
-            double korvausMäärä = matkustajienLukumäärä[0] * välimatkaKm[0] * kilometrikorvausPerKm;
+            double korvausMäärä = matkustajienLukumäärä * välimatkaKm * kilometrikorvausPerKm;
             return korvausMäärä;
         }
-        
-        // Päivärahakorvaus laskuri
-        public int PäivärahaKorvaus(List<int> aika, List<int> km)
+
+        // Päivärahakorvauslaskuri
+        public int Päivärahakorvaus(int aika, int km)
         {
-            int kilometrit = km[0];
-            int minuutit = aika[0];
+            int kilometrit = km;
+            int minuutit = aika;
             int päivät = 0;
             int yliYksiPäiväJaKuusiTuntiaKorvaus = 0;
             int yliYksiPäiväJaKaksiTuntiaKorvaus = 0;
@@ -85,7 +86,7 @@ namespace matkalaskuCore
             else if (päivät > 0)
             {
                 Console.WriteLine("");
-                Console.WriteLine("PÄIVÄRAHAKORVAUKSET:");
+                Console.WriteLine("PÄIVÄRAHAKORVAUKSET");
                 Console.WriteLine("");
                 Console.WriteLine("Kokopäivärahakorvauksia: " + päivät + " kpl");
                 Console.WriteLine("Yksikköhinta " + kokoPäiväRahaHinta + " euroa");
@@ -94,8 +95,7 @@ namespace matkalaskuCore
             }
 
             return korvauksetYhteensä;
-
         }
-        
+
     }
 }
