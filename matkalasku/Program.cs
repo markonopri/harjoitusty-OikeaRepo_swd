@@ -170,15 +170,16 @@ namespace matkalasku
                     Console.WriteLine("------------------------");
                     Console.WriteLine("");
 
-
                     // Matkalaskun maksettutila [MAKSETTU / EI MAKSETTU]
                     if (matkalaskunStatus[laskunNumero - 1] == 1)
                     {
                         Console.WriteLine("[MAKSETTU]");
+                        Console.WriteLine("");
                     }
                     else if (matkalaskunStatus[laskunNumero - 1] == 2)
                     {
                         Console.WriteLine("[EI MAKSETTU]");
+                        Console.WriteLine("");
                     }
 
                     // Matkan lähtö- ja paluuaika
@@ -186,14 +187,15 @@ namespace matkalasku
                     Console.WriteLine("Matkan paluuaika: " + matkanPaluuaika[laskunNumero - 1]);
                     Console.WriteLine("");
 
-                    // Matkan tarkoitus ja lisätietoja
+                    // Matkan tarkoitus, lisätietoja, korvauksen saaja
                     Console.WriteLine("Matkan tarkoitus: " + matkanTarkoitus[laskunNumero - 1]);
                     Console.WriteLine("Lisätietoja: " + matkanLisätiedot[laskunNumero - 1]);
+                    Console.WriteLine("Korvauksen saaja " + matkakorvausSaaja[laskunNumero - 1]);
                     Console.WriteLine("");
 
                     // Matkan reitti ja välimatka
                     Console.WriteLine("Reitti: " + reitinKuvaus[laskunNumero - 1]);
-                    Console.WriteLine("Välimatka: " + välimatkaKm[laskunNumero - 1]);
+                    Console.WriteLine("Välimatka: " + välimatkaKm[laskunNumero - 1] + " km");
                     Console.WriteLine("");
 
                     // Kilometrikorvauksen laskin
@@ -209,8 +211,8 @@ namespace matkalasku
                     Console.WriteLine("");
                     Console.WriteLine("Henkilöiden lukumäärä: " + matkustajienLukumäärä[laskunNumero - 1] + " kpl");
                     Console.WriteLine("Kilometrit: " + välimatkaKm[laskunNumero - 1] + " km");
-                    Console.WriteLine("EUR / km: 0.43 euroa:");
-                    Console.WriteLine("kokonaishinta: " + kilometrikorvausMäärä + " euroa");
+                    Console.WriteLine("EUR / km: 0.43 euroa");
+                    Console.WriteLine("Kilometrikorvausten kokonaishinta: " + kilometrikorvausMäärä + " euroa");
                     Console.WriteLine("");
                     Console.WriteLine("------------------------");
 
@@ -229,6 +231,8 @@ namespace matkalasku
                     Console.WriteLine("");
                     Console.WriteLine("------------------------");
                     Console.WriteLine("");
+
+                    // Tallennetaanko lasku
                     Console.WriteLine("\n### TALLENNA LASKU ###\n1. Kyllä\n2. Ei\n");
                     int laskuTallennus = Convert.ToInt32(Console.ReadLine());
 
@@ -251,14 +255,15 @@ namespace matkalasku
                             outputFile.WriteLine("Matkan paluuaika: " + matkanPaluuaika[laskunNumero - 1]);
                             outputFile.WriteLine("");
 
-                            // Matkan tarkoitus ja lisätietoja
+                            // Matkan tarkoitus, lisätietoja, korvauksen saaja
                             outputFile.WriteLine("Matkan tarkoitus: " + matkanTarkoitus[laskunNumero - 1]);
                             outputFile.WriteLine("Lisätietoja: " + matkanLisätiedot[laskunNumero - 1]);
+                            outputFile.WriteLine("Korvauksen saaja: " + matkakorvausSaaja[laskunNumero - 1]);
                             outputFile.WriteLine("");
 
                             // Matkan reitti ja välimatka
                             outputFile.WriteLine("Reitti: " + reitinKuvaus[laskunNumero - 1]);
-                            outputFile.WriteLine("Välimatka: " + välimatkaKm[laskunNumero - 1]);
+                            outputFile.WriteLine("Välimatka: " + välimatkaKm[laskunNumero - 1] + " km");
                             outputFile.WriteLine("");
 
                             outputFile.WriteLine("------------------------");
@@ -267,13 +272,12 @@ namespace matkalasku
                             outputFile.WriteLine("");
                             outputFile.WriteLine("Henkilöiden lukumäärä: " + matkustajienLukumäärä[laskunNumero - 1] + " kpl");
                             outputFile.WriteLine("Kilometrit: " + välimatkaKm[laskunNumero - 1] + " km");
-                            outputFile.WriteLine("EUR / km: 0.43 euroa:");
+                            outputFile.WriteLine("EUR / km: 0.43 euroa");
                             outputFile.WriteLine("kokonaishinta: " + kilometrikorvausMäärä + " euroa");
                             outputFile.WriteLine("");
                             outputFile.WriteLine("------------------------");
 
                             // Päivärahakorvauksen laskin
-
                             outputFile.WriteLine("Päivärahojen kokonaishinta: " + päivärahaKorvausMäärä + " euroa");
                             outputFile.WriteLine("");
                             outputFile.WriteLine("------------------------");
@@ -414,8 +418,9 @@ namespace matkalasku
                             // Jos maksettu
                             if (matkalaskunStatus[laskunNumero2 - 1] == 1)
                             {
-                                Console.WriteLine("Nykyinen matkalaskun status: " + matkalaskunStatus[laskunNumero2 - 1]);
+                                Console.WriteLine("Nykyinen matkalaskun status: [MAKSETTU]");
                                 Console.WriteLine("Syötä uusi matkalaskun status: ");
+                                Console.WriteLine("Onko matkalasku maksettu: ");
                                 Console.WriteLine("Kyllä = 1");
                                 Console.WriteLine("Ei = 2");
                                 int matkalaskunStatusSyöte = Convert.ToInt32(Console.ReadLine());
@@ -425,8 +430,9 @@ namespace matkalasku
                             // Jos ei maksettu
                             else if (matkalaskunStatus[laskunNumero2 - 1] == 2)
                             {
-                                Console.WriteLine("Nykyinen matkalaskun status: " + matkalaskunStatus[laskunNumero2 - 1]);
+                                Console.WriteLine("Nykyinen matkalaskun status: [EI MAKSETTU]");
                                 Console.WriteLine("Syötä uusi matkalaskun status: ");
+                                Console.WriteLine("Onko matkalasku maksettu: ");
                                 Console.WriteLine("Kyllä = 1");
                                 Console.WriteLine("Ei = 2");
                                 int matkalaskunStatusSyöte = Convert.ToInt32(Console.ReadLine());
