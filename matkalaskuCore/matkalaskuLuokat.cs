@@ -33,7 +33,7 @@ namespace matkalaskuCore
             int osaPäiväRahaHinta = 20;
             int korvauksetYhteensä = 0;
 
-            // Päivärahakorvauslaskin, jos päivät yli 1
+            // Lasketaan päivät ja aika, jos päivät yli 1
             if (kilometrit > 15)
             {
                 while (true)
@@ -46,6 +46,7 @@ namespace matkalaskuCore
                     else if (minuutit > 360)
                     {
                         yliYksiPäiväJaKuusiTuntiaKorvaus += 1;
+                        break;
                     }
                     else if (minuutit > 120)
                     {
@@ -59,8 +60,8 @@ namespace matkalaskuCore
                 }
             }
 
-            // Päivärahakorvauslaskin, jos päivät alle 0
-            if (kilometrit > 15 && päivät < 0)
+            // Lasketaan aika, jos päivät alle 0
+            if (kilometrit > 15 && päivät == 0)
             {
                 while (true)
                 {
@@ -80,7 +81,8 @@ namespace matkalaskuCore
                     }
                 }
             }
-
+            
+            // Itse kilometrikorvauslaskin
             if (päivät > 0 && yliYksiPäiväJaKuusiTuntiaKorvaus > 0)
             {
                 Console.WriteLine("");
@@ -117,7 +119,7 @@ namespace matkalaskuCore
                 Console.WriteLine("Kokopäivärahojen kokonaishinta: " + (päivät * kokoPäiväRahaHinta) + " euroa");
                 korvauksetYhteensä = (päivät * kokoPäiväRahaHinta);
             }
-            else if (päivät < 0 && yliKymmenenTuntiaKorvaus > 1)
+            else if (päivät == 0 && yliKymmenenTuntiaKorvaus == 1)
             {
                 Console.WriteLine("");
                 Console.WriteLine("PÄIVÄRAHAKORVAUKSET");
@@ -127,7 +129,7 @@ namespace matkalaskuCore
                 Console.WriteLine("Kokopäivärahojen kokonaishinta: " + (yliKymmenenTuntiaKorvaus * kokoPäiväRahaHinta) + " euroa");
                 korvauksetYhteensä = (yliKymmenenTuntiaKorvaus * kokoPäiväRahaHinta);
             }
-            else if (päivät < 0 && yliKuusiTuntiaKorvaus > 1)
+            else if (päivät == 0 && yliKuusiTuntiaKorvaus == 1)
             {
                 Console.WriteLine("");
                 Console.WriteLine("PÄIVÄRAHAKORVAUKSET");

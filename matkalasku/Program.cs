@@ -190,7 +190,7 @@ namespace matkalasku
                     // Matkan tarkoitus, lisätietoja, korvauksen saaja
                     Console.WriteLine("Matkan tarkoitus: " + matkanTarkoitus[laskunNumero - 1]);
                     Console.WriteLine("Lisätietoja: " + matkanLisätiedot[laskunNumero - 1]);
-                    Console.WriteLine("Korvauksen saaja " + matkakorvausSaaja[laskunNumero - 1]);
+                    Console.WriteLine("Korvauksen saaja: " + matkakorvausSaaja[laskunNumero - 1]);
                     Console.WriteLine("");
 
                     // Matkan reitti ja välimatka
