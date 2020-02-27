@@ -168,6 +168,7 @@ namespace matkalasku
                         Console.WriteLine("MATKALASKU NRO " + laskunNumero);
                         Console.WriteLine("------------------------");
                         Console.WriteLine("");
+                        
 
                         // Matkalaskun maksettutila [MAKSETTU / EI MAKSETTU]
                         if (matkalaskunStatus[laskunNumero - 1] == 1)
@@ -227,7 +228,70 @@ namespace matkalasku
                         Console.WriteLine("");
                         Console.WriteLine("------------------------");
                         Console.WriteLine("");
-                    }
+                        Console.WriteLine("/n### TALLENNA LASKU ###/n1. Kyllä/n2. Ei/n");
+                        char laskuTallennus = Convert.ToInt32(Console.ReadLine());
+                        
+                        if (laskuTallennus == 1)
+                        {
+                            string docPath = Environment.GetFolderPath(Environmnet.SpecialFolder.MyDocumnets);
+
+                            using (StreamWriter outputFile = new StreamWriter(docPath.Combine(docPath, "matkalasku.txt")))
+                            {
+                                outputFile.WriteLine("--MATKALASKU--");
+                                outputFile.WriteLine("--------------");
+
+                                outputFile.WriteLine("------------------------");
+                                outputFile.WriteLine("MATKALASKU NRO " + laskunNumero);
+                                outputFile.WriteLine("------------------------");
+                                outputFile.WriteLine("");
+
+                                // Matkan lähtö- ja paluuaika
+                                outputFile.WriteLine("Matkan lähtöaika: " + matkanLähtöaika[laskunNumero - 1]);
+                                outputFile.WriteLine("Matkan paluuaika: " + matkanPaluuaika[laskunNumero - 1]);
+                                outputFile.WriteLine("");
+
+                                // Matkan tarkoitus ja lisätietoja
+                                outputFile.WriteLine("Matkan tarkoitus: " + matkanTarkoitus[laskunNumero - 1]);
+                                outputFile.WriteLine("Lisätietoja: " + matkanLisätiedot[laskunNumero - 1]);
+                                outputFile.WriteLine("");
+
+                                // Matkan reitti ja välimatka
+                                outputFile.WriteLine("Reitti: " + reitinKuvaus[laskunNumero - 1]);
+                                outputFile.WriteLine("Välimatka: " + välimatkaKm[laskunNumero - 1]);
+                                outputFile.WriteLine("");
+                            
+                                outputFile.WriteLine("------------------------");
+                                outputFile.WriteLine("");
+                                outputFile.WriteLine("KILOMETRIKORVAUKSET");
+                                outputFile.WriteLine("");
+                                outputFile.WriteLine("Henkilöiden lukumäärä: " + matkustajienLukumäärä[laskunNumero - 1] + " kpl");
+                                outputFile.WriteLine("Kilometrit: " + välimatkaKm[laskunNumero - 1] + " km");
+                                outputFile.WriteLine("EUR / km: 0.43 euroa:");
+                                outputFile.WriteLine("kokonaishinta: " + kilometrikorvausMäärä + " euroa");
+                                outputFile.WriteLine("");
+                                outputFile.WriteLine("------------------------");
+
+                                // Päivärahakorvauksen laskin
+                                
+                                outputFile.WriteLine("Päivärahojen kokonaishinta: " + päivärahaKorvausMäärä + " euroa");
+                                outputFile.WriteLine("");
+                                outputFile.WriteLine("------------------------");
+                                outputFile.WriteLine("");
+
+                                // Maksetaan yhteensä korvauksia
+                                outputFile.WriteLine("Maksetaan korvauksia yhteensä: " + (päivärahaKorvausMäärä + kilometrikorvausMäärä) + " euroa");
+                                outputFile.WriteLine("");
+                                outputFile.WriteLine("------------------------");
+                                outputFile.WriteLine("");
+                        
+                            }
+                        }
+                        else 
+                        {
+                            continue;
+                        }
+                    
+                }
                     // Matkalaskun muokkaus
                     else if (valinta == 3)
                     {
