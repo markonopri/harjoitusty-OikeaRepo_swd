@@ -47,8 +47,10 @@ namespace matkalasku
                 int laskujenMäärä = 0;
                 List<int> matkalaskunStatus = new List<int>();
 
+                int päivärahaKorvausMäärä = 0;
+
                 // Matkalasku-ohjelma käyttöliittymä
-                do
+            do
                 {
                     Console.WriteLine("-Matkalasku-");
                     Console.WriteLine("------------");
@@ -216,11 +218,112 @@ namespace matkalasku
                     Console.WriteLine("");
                     Console.WriteLine("------------------------");
 
+                    // Päivärahakorvaus laskin
+                    int minuutit = matkanKestoMin[laskunNumero - 1];
+                    int päivät = 0;
+                    int yliYksiPäiväJaKuusiTuntiaKorvaus = 0;
+                    int yliYksiPäiväJaKaksiTuntiaKorvaus = 0;
+                    int yliKymmenenTuntiaKorvaus = 0;
+                    int yliKuusiTuntiaKorvaus = 0;
+                    int kokoPäiväRahaHinta = 43;
+                    int osaPäiväRahaHinta = 20;
+
+                    // Lasketaan päivät ja aika, jos päivät yli 1
+                    if (välimatkaKm2[laskunNumero - 1] > 15)
+                    {
+                        while (true)
+                        {
+                            if (minuutit > 1440)
+                            {
+                                päivät++;
+                                minuutit -= 1440;
+                            }
+                            else if (minuutit > 360)
+                            {
+                                yliYksiPäiväJaKuusiTuntiaKorvaus += 1;
+                                break;
+                            }
+                            else if (minuutit > 120)
+                            {
+                                yliYksiPäiväJaKaksiTuntiaKorvaus += 1;
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
+
+                    // Lasketaan päivät ja aika, jos päivät alle 0 
+                    if (välimatkaKm2[laskunNumero - 1] > 15 && päivät == 0)
+                    {
+                        while (true)
+                        {
+                            if (minuutit > 600)
+                            {
+                                yliKymmenenTuntiaKorvaus += 1;
+                                break;
+                            }
+                            else if (minuutit > 360)
+                            {
+                                yliKuusiTuntiaKorvaus += 1;
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
+
+                    if (päivät > 0 && yliYksiPäiväJaKuusiTuntiaKorvaus > 0)
+                    {
+                        matkalaskuLuokat päivärahaKorvaus1 = new matkalaskuLuokat();
+                        päivärahaKorvausMäärä = päivärahaKorvaus1.YliYksiPäiväJaKuusiTuntia(päivät, yliYksiPäiväJaKuusiTuntiaKorvaus);
+                    }
+                    else if (päivät > 0 && yliYksiPäiväJaKaksiTuntiaKorvaus > 0)
+                    {
+                        matkalaskuLuokat päivärahaKorvaus2 = new matkalaskuLuokat();
+                        päivärahaKorvausMäärä = päivärahaKorvaus2.YliYksiPäiväJaKaksiTuntia(päivät, yliYksiPäiväJaKaksiTuntiaKorvaus);
+                    }
+                    else if (päivät > 0)
+                    {
+                        matkalaskuLuokat päivärahaKorvaus3 = new matkalaskuLuokat();
+                        päivärahaKorvausMäärä = päivärahaKorvaus3.YliYksiPäiväMutteiMuuta(päivät);
+                    }
+                    else if (päivät == 0 && yliKymmenenTuntiaKorvaus == 1)
+                    {
+                        matkalaskuLuokat päivärahakorvaus4 = new matkalaskuLuokat();
+                        päivärahaKorvausMäärä = päivärahakorvaus4.AllePäiväMuttaYliKymmenenTuntia(yliKymmenenTuntiaKorvaus);
+                    }
+                    else if (päivät == 0 && yliKuusiTuntiaKorvaus == 1)
+                    {
+                        matkalaskuLuokat päivärahakorvaus5 = new matkalaskuLuokat();
+                        päivärahaKorvausMäärä = päivärahakorvaus5.AllePäiväMuttaYliKuusiTuntia(yliKuusiTuntiaKorvaus);
+                    }
+
                     // Päivärahakorvauksen laskin
-                    matkalaskuLuokat päivärahaKorvaus = new matkalaskuLuokat();
-                    int matkanKesto2 = matkanKestoMin[laskunNumero - 1];
-                    int välimatkaKm4 = välimatkaKm2[laskunNumero - 1];
-                    int päivärahaKorvausMäärä = päivärahaKorvaus.Päivärahakorvaus(matkanKesto2, välimatkaKm4);
+                    Console.WriteLine("");
+                    Console.WriteLine("PÄIVÄRAHAKORVAUKSET:");
+                    Console.WriteLine("");
+                    if (yliKuusiTuntiaKorvaus == 1)
+                    {
+                        Console.WriteLine("Kokopäivärahakorvauksia: " + (päivät + yliYksiPäiväJaKuusiTuntiaKorvaus - 1) + " kpl");
+                        Console.WriteLine("Yksikköhinta: " + kokoPäiväRahaHinta + " euroa");
+                        Console.WriteLine("Kokopäivärahojen kokonaishinta: " + ((päivät + yliYksiPäiväJaKuusiTuntiaKorvaus - 1) * kokoPäiväRahaHinta) + " euroa");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Kokopäivärahakorvauksia: " + (päivät + yliYksiPäiväJaKuusiTuntiaKorvaus) + " kpl");
+                        Console.WriteLine("Yksikköhinta: " + kokoPäiväRahaHinta + " euroa");
+                        Console.WriteLine("Kokopäivärahojen kokonaishinta: " + ((päivät + yliYksiPäiväJaKuusiTuntiaKorvaus) * kokoPäiväRahaHinta) + " euroa");
+                    }                    
+                    Console.WriteLine("");
+                    Console.WriteLine("Osapäivärahakorvauksia: " + (yliYksiPäiväJaKaksiTuntiaKorvaus + yliKuusiTuntiaKorvaus) + " kpl");
+                    Console.WriteLine("Yksikköhinta: " + osaPäiväRahaHinta + " euroa");
+                    Console.WriteLine("Osapäivärahojen kokonaishinta: " + (yliYksiPäiväJaKaksiTuntiaKorvaus + yliKuusiTuntiaKorvaus) * osaPäiväRahaHinta + " euroa");
+                    Console.WriteLine("");
                     Console.WriteLine("Päivärahojen kokonaishinta: " + päivärahaKorvausMäärä + " euroa");
                     Console.WriteLine("");
                     Console.WriteLine("------------------------");
