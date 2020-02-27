@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{C8467869-22F2-472F-B46B-7D92C81586CB}|Default">
   <MonoDevelop.Ide.ItemProperties.matkalasku PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../matkalaskuCoreTests/matkalaskuTests.cs">
     <Files>
-      <File FileName="Program.cs" Line="372" Column="64" />
-      <File FileName="../matkalaskuCore/matkalaskuLuokat.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="243" Column="79" />
+      <File FileName="../matkalaskuCore/matkalaskuLuokat.cs" />
+      <File FileName="../matkalaskuCoreTests/matkalaskuTests.cs" Line="18" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

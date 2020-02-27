@@ -1,5 +1,6 @@
 ﻿using matkalaskuCore;
 using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -228,14 +229,14 @@ namespace matkalasku
                         Console.WriteLine("");
                         Console.WriteLine("------------------------");
                         Console.WriteLine("");
-                        Console.WriteLine("/n### TALLENNA LASKU ###/n1. Kyllä/n2. Ei/n");
-                        char laskuTallennus = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("\n### TALLENNA LASKU ###\n1. Kyllä\n2. Ei\n");
+                        int laskuTallennus = Convert.ToInt32(Console.ReadLine());
                         
                         if (laskuTallennus == 1)
                         {
-                            string docPath = Environment.GetFolderPath(Environmnet.SpecialFolder.MyDocumnets);
+                            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-                            using (StreamWriter outputFile = new StreamWriter(docPath.Combine(docPath, "matkalasku.txt")))
+                            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "matkalasku.txt")))
                             {
                                 outputFile.WriteLine("--MATKALASKU--");
                                 outputFile.WriteLine("--------------");
