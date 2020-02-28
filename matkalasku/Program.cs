@@ -46,8 +46,11 @@ namespace matkalasku
                 List<double> matkustajienLukumäärä = new List<double>();
                 int laskujenMäärä = 0;
                 List<int> matkalaskunStatus = new List<int>();
+                List<int> muutAjoneuvot = new List<int>();
+                List<double> muutAjoneuvotKm = new List<double>();
 
                 int päivärahaKorvausMäärä = 0;
+                double muutAjoneuvotKorvausMäärä = 0;
 
                 // Matkalasku-ohjelma käyttöliittymä
             do
@@ -135,6 +138,39 @@ namespace matkalasku
                     int matkustajaSyöte = Convert.ToInt32(Console.ReadLine());
                     matkustajienLukumäärä.Insert(laskujenMäärä, matkustajaSyöte);
                     Console.WriteLine("");
+
+                    // Muut ajoneuvot
+                    Console.WriteLine("Onko käytetty muita ajoneuvoja auton lisäksi");
+                    Console.WriteLine("1. Kyllä");
+                    Console.WriteLine("2. Ei");
+                    int muutAjoneuvotSyöte = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("");
+
+                    // Jos käytetty muuta ajoneuvoa
+                    if (muutAjoneuvotSyöte == 1)
+                    {
+                        Console.WriteLine("Valitse ajoneuvo");
+                        Console.WriteLine("1. moottorivene, enintään 50 hv");
+                        Console.WriteLine("2. moottorivene, yli 50 hv");
+                        Console.WriteLine("3. moottorikelkka");
+                        Console.WriteLine("4. mönkijä");
+                        Console.WriteLine("5. moottoripyörä");
+                        Console.WriteLine("6. mopo");
+                        Console.WriteLine("7. muu kulkuneuvo");
+                        int ajoNeuvoValintaSyöte = Convert.ToInt32(Console.ReadLine());
+                        muutAjoneuvot.Insert(laskujenMäärä, ajoNeuvoValintaSyöte);
+                        Console.WriteLine("");
+
+                        Console.WriteLine("Syötä ajoneuvolla kuljettu matka (km)");
+                        int ajoNeuvoKmSyöte = Convert.ToInt32(Console.ReadLine());
+                        muutAjoneuvotKm.Insert(laskujenMäärä, ajoNeuvoKmSyöte);
+                        Console.WriteLine("");
+                    }
+                    else
+                    {
+                        muutAjoneuvotKm.Insert(laskujenMäärä, 0);
+                        muutAjoneuvot.Insert(laskujenMäärä, 0);
+                    }
 
                     // Matkalaskun status [MAKSETTU / EI MAKSETTU]
                     Console.WriteLine("Onko matkalasku maksettu: ");
@@ -324,8 +360,76 @@ namespace matkalasku
                     Console.WriteLine("------------------------");
                     Console.WriteLine("");
 
+                    // Muut ajoneuvot
+                    Console.WriteLine("KORVAUKSET TOISESTA KULKUNEUVOSTA");
+                    Console.WriteLine("");
+                    Console.Write("Toinen käytetty kulkuneuvo: ");
+                    // Jos Käytetty Moottorivene, enintään 50 hv
+                    if (muutAjoneuvot[laskunNumero - 1] == 1)
+                    {
+                        Console.WriteLine("moottorivene, enintään 50 hv");
+                        matkalaskuLuokat muutAjoneuvotKorvaus1 = new matkalaskuLuokat();
+                        muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus1.MoottoriveneEnintään50Hv(muutAjoneuvotKm[laskunNumero - 1]);
+                        Console.WriteLine("Yksikkö hinta: 0.75 euroa");
+                    }
+                    // Jos käytetty Moottorivene, yli 50 hv
+                    else if (muutAjoneuvot[laskunNumero - 1] == 2)
+                    {
+                        Console.WriteLine("moottorivene, yli 50 hv");
+                        matkalaskuLuokat muutAjoneuvotKorvaus2 = new matkalaskuLuokat();
+                        muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus2.MoottoriveneYli50Hv(muutAjoneuvotKm[laskunNumero - 1]);
+                        Console.WriteLine("Yksikkö hinta: 1.10 euroa");
+                    }
+                    // Jos käytetty moottorikelkka 
+                    else if (muutAjoneuvot[laskunNumero - 1] == 3) {
+                        Console.WriteLine("moottorikelkka");
+                        matkalaskuLuokat muutAjoneuvotKorvaus3 = new matkalaskuLuokat();
+                        muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus3.Moottorikelkka(muutAjoneuvotKm[laskunNumero - 1]);
+                        Console.WriteLine("Yksikkö hinta: 1.04 euroa");
+                    }
+                    // Jos käytetty mönkijä 
+                    else if (muutAjoneuvot[laskunNumero - 1] == 4)
+                    {
+                        Console.WriteLine("mönkijä");
+                        matkalaskuLuokat muutAjoneuvotKorvaus4 = new matkalaskuLuokat();
+                        muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus4.Mönkijä(muutAjoneuvotKm[laskunNumero - 1]);
+                        Console.WriteLine("Yksikkö hinta: 0.98 euroa");
+                    }
+                    // Jos käytetty moottoripyörää 
+                    else if (muutAjoneuvot[laskunNumero - 1] == 5) {
+                        Console.WriteLine("moottoripyörä");
+                        matkalaskuLuokat muutAjoneuvotKorvaus5 = new matkalaskuLuokat();
+                        muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus5.Moottoripyörä(muutAjoneuvotKm[laskunNumero - 1]);
+                        Console.WriteLine("Yksikkö hinta: 0.33 euroa");
+                    }
+                    // Jos käytetty mopo
+                    else if (muutAjoneuvot[laskunNumero - 1] == 6)
+                    {
+                        Console.WriteLine("mopo");
+                        matkalaskuLuokat muutAjoneuvotKorvaus6 = new matkalaskuLuokat();
+                        muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus6.Mopo(muutAjoneuvotKm[laskunNumero - 1]);
+                        Console.WriteLine("Yksikkö hinta: 0.18 euroa");
+                    }
+                    // Jos käytetty muu kulkuneuvo
+                    else if (muutAjoneuvot[laskunNumero - 1] == 7)
+                    {
+                        Console.WriteLine("muu kulkuneuvo");
+                        matkalaskuLuokat muutAjoneuvotKorvaus7 = new matkalaskuLuokat();
+                        muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus7.MuuKulkuneuvo(muutAjoneuvotKm[laskunNumero - 1]);
+                        Console.WriteLine("Yksikkö hinta: 0.10 euroa");
+                    }
+                    // Jos ei ole käytetty muuta
+                    else
+                    {
+                        Console.WriteLine("Ei ole");
+                    }
+                    Console.WriteLine("Korvaukset toisesta kulkuneuvosta: " + muutAjoneuvotKorvausMäärä + " euroa");
+                    Console.WriteLine("");
+                    Console.WriteLine("------------------------");
+                    Console.WriteLine("");
+
                     // Maksetaan yhteensä korvauksia
-                    Console.WriteLine("Maksetaan korvauksia yhteensä: " + (päivärahaKorvausMäärä + kilometrikorvausMäärä) + " euroa");
+                    Console.WriteLine("Maksetaan korvauksia yhteensä: " + (päivärahaKorvausMäärä + kilometrikorvausMäärä + muutAjoneuvotKorvausMäärä) + " euroa");
                     Console.WriteLine("");
                     Console.WriteLine("------------------------");
                     Console.WriteLine("");
@@ -380,17 +484,92 @@ namespace matkalasku
                             outputFile.WriteLine("------------------------");
 
                             // Päivärahakorvauksen laskin
+                            outputFile.WriteLine("");
+                            outputFile.WriteLine("PÄIVÄRAHAKORVAUKSET");
+                            outputFile.WriteLine("");
+                            outputFile.WriteLine("Kokopäivärahakorvauksia: " + (päivät + yliYksiPäiväJaKuusiTuntiaKorvaus) + " kpl");
+                            outputFile.WriteLine("Yksikköhinta: " + kokoPäiväRahaHinta + " euroa");
+                            outputFile.WriteLine("Kokopäivärahojen kokonaishinta: " + ((päivät + yliYksiPäiväJaKuusiTuntiaKorvaus) * kokoPäiväRahaHinta) + " euroa");
+                            outputFile.WriteLine("");
+                            outputFile.WriteLine("Osapäivärahakorvauksia: " + (yliYksiPäiväJaKaksiTuntiaKorvaus + yliKuusiTuntiaKorvaus) + " kpl");
+                            outputFile.WriteLine("Yksikköhinta: " + osaPäiväRahaHinta + " euroa");
+                            outputFile.WriteLine("Osapäivärahojen kokonaishinta: " + (yliYksiPäiväJaKaksiTuntiaKorvaus + yliKuusiTuntiaKorvaus) * osaPäiväRahaHinta + " euroa");
+                            outputFile.WriteLine("");
                             outputFile.WriteLine("Päivärahojen kokonaishinta: " + päivärahaKorvausMäärä + " euroa");
                             outputFile.WriteLine("");
                             outputFile.WriteLine("------------------------");
                             outputFile.WriteLine("");
 
-                            // Maksetaan yhteensä korvauksia
-                            outputFile.WriteLine("Maksetaan korvauksia yhteensä: " + (päivärahaKorvausMäärä + kilometrikorvausMäärä) + " euroa");
+                            // Muut ajoneuvot
+                            outputFile.WriteLine("KORVAUKSET TOISESTA KULKUNEUVOSTA");
+                            outputFile.WriteLine("");
+                            outputFile.Write("Toinen käytetty kulkuneuvo: ");
+                            // Jos Käytetty Moottorivene, enintään 50 hv
+                            if (muutAjoneuvot[laskunNumero - 1] == 1)
+                            {
+                                outputFile.WriteLine("moottorivene, enintään 50 hv");
+                                matkalaskuLuokat muutAjoneuvotKorvaus1 = new matkalaskuLuokat();
+                                muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus1.MoottoriveneEnintään50Hv(muutAjoneuvotKm[laskunNumero - 1]);
+                                outputFile.WriteLine("Yksikkö hinta: 0.75 euroa");
+                            }
+                            // Jos käytetty Moottorivene, yli 50 hv
+                            else if (muutAjoneuvot[laskunNumero - 1] == 2)
+                            {
+                                outputFile.WriteLine("moottorivene, yli 50 hv");
+                                matkalaskuLuokat muutAjoneuvotKorvaus2 = new matkalaskuLuokat();
+                                muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus2.MoottoriveneYli50Hv(muutAjoneuvotKm[laskunNumero - 1]);
+                                outputFile.WriteLine("Yksikkö hinta: 1.10 euroa");
+                            }
+                            // Jos käytetty moottorikelkka 
+                            else if (muutAjoneuvot[laskunNumero - 1] == 3)
+                            {
+                                outputFile.WriteLine("moottorikelkka");
+                                matkalaskuLuokat muutAjoneuvotKorvaus3 = new matkalaskuLuokat();
+                                muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus3.Moottorikelkka(muutAjoneuvotKm[laskunNumero - 1]);
+                                outputFile.WriteLine("Yksikkö hinta: 1.04 euroa");
+                            }
+                            // Jos käytetty mönkijä 
+                            else if (muutAjoneuvot[laskunNumero - 1] == 4)
+                            {
+                                outputFile.WriteLine("mönkijä");
+                                matkalaskuLuokat muutAjoneuvotKorvaus4 = new matkalaskuLuokat();
+                                muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus4.Mönkijä(muutAjoneuvotKm[laskunNumero - 1]);
+                                outputFile.WriteLine("Yksikkö hinta: 0.98 euroa");
+                            }
+                            // Jos käytetty moottoripyörää 
+                            else if (muutAjoneuvot[laskunNumero - 1] == 5)
+                            {
+                                outputFile.WriteLine("moottoripyörä");
+                                matkalaskuLuokat muutAjoneuvotKorvaus5 = new matkalaskuLuokat();
+                                muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus5.Moottoripyörä(muutAjoneuvotKm[laskunNumero - 1]);
+                                outputFile.WriteLine("Yksikkö hinta: 0.33 euroa");
+                            }
+                            // Jos käytetty mopo
+                            else if (muutAjoneuvot[laskunNumero - 1] == 6)
+                            {
+                                outputFile.WriteLine("mopo");
+                                matkalaskuLuokat muutAjoneuvotKorvaus6 = new matkalaskuLuokat();
+                                muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus6.Mopo(muutAjoneuvotKm[laskunNumero - 1]);
+                                outputFile.WriteLine("Yksikkö hinta: 0.18 euroa");
+                            }
+                            // Jos käytetty muu kulkuneuvo
+                            else if (muutAjoneuvot[laskunNumero - 1] == 7)
+                            {
+                                outputFile.WriteLine("muu kulkuneuvo");
+                                matkalaskuLuokat muutAjoneuvotKorvaus7 = new matkalaskuLuokat();
+                                muutAjoneuvotKorvausMäärä = muutAjoneuvotKorvaus7.MuuKulkuneuvo(muutAjoneuvotKm[laskunNumero - 1]);
+                                outputFile.WriteLine("Yksikkö hinta: 0.10 euroa");
+                            }
+                            outputFile.WriteLine("Korvaukset toisesta kulkuneuvosta: " + muutAjoneuvotKorvausMäärä + " euroa");
                             outputFile.WriteLine("");
                             outputFile.WriteLine("------------------------");
                             outputFile.WriteLine("");
-
+                            
+                            // Maksetaan yhteensä korvauksia
+                            outputFile.WriteLine("Maksetaan korvauksia yhteensä: " + (päivärahaKorvausMäärä + kilometrikorvausMäärä + muutAjoneuvotKorvausMäärä) + " euroa");
+                            outputFile.WriteLine("");
+                            outputFile.WriteLine("------------------------");
+                            outputFile.WriteLine("");
                         }
                     }
                     else
@@ -427,8 +606,9 @@ namespace matkalasku
                         Console.WriteLine("7. Reitin kilometrit");
                         Console.WriteLine("8. Matkustajien lukumäärä");
                         Console.WriteLine("9. Matkalaskun päivämäärä");
-                        Console.WriteLine("10. Matkalaskun status");
-                        Console.WriteLine("11. Palaa etusivulle");
+                        Console.WriteLine("10. Muu ajoneuvo");
+                        Console.WriteLine("11. Matkalaskun status");
+                        Console.WriteLine("12. Palaa etusivulle");
                         muokkausvalinta = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("");
 
@@ -514,8 +694,43 @@ namespace matkalasku
 
                             matkalaskunLuomisPvm[laskunNumero2 - 1] = matkalaskunLuomisPvmSyöte;
                         }
+
+                        else if (muokkausvalinta == 10) {
+                            // Muokkaa muut ajoneuvot
+                            Console.WriteLine("Onko käytetty muita ajoneuvoja auton lisäksi");
+                            Console.WriteLine("1. Kyllä");
+                            Console.WriteLine("2. Ei");
+                            int muutAjoneuvotSyöte2 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("");
+
+                            // Jos käytetty muuta ajoneuvoa
+                            if (muutAjoneuvotSyöte2 == 1)
+                            {
+                                Console.WriteLine("Nykyinen muu ajoneuvon numero: " + muutAjoneuvot[laskunNumero2 - 1]);
+                                Console.WriteLine("Valitse uusi muuajoneuvo");
+                                Console.WriteLine("1. moottorivene, enintään 50 hv");
+                                Console.WriteLine("2. moottorivene, yli 50 hv");
+                                Console.WriteLine("3. moottorikelkka");
+                                Console.WriteLine("4. mönkijä");
+                                Console.WriteLine("5. moottoripyörä");
+                                Console.WriteLine("6. mopo");
+                                Console.WriteLine("7. muu kulkuneuvo");
+                                int ajoNeuvoValintaSyöte = Convert.ToInt32(Console.ReadLine());
+                                muutAjoneuvot[laskunNumero2 - 1] = ajoNeuvoValintaSyöte;
+                                Console.WriteLine("");
+
+                                Console.WriteLine("Syötä uusi ajoneuvolla kuljettu matka (km)");
+                                int ajoNeuvoKmSyöte = Convert.ToInt32(Console.ReadLine());
+                                muutAjoneuvotKm[laskunNumero2 - 1] = ajoNeuvoKmSyöte;
+                            }
+                            else
+                            {
+                                muutAjoneuvotKm[laskunNumero2 - 1] = 0;
+                                muutAjoneuvot[laskunNumero2 - 1] = 0;
+                            }
+                        }
                         // Muokkaa laskun status
-                        else if (muokkausvalinta == 10)
+                        else if (muokkausvalinta == 11)
                         {
                             // Jos maksettu
                             if (matkalaskunStatus[laskunNumero2 - 1] == 1)
@@ -543,7 +758,7 @@ namespace matkalasku
                             }
                         }
                     }
-                    while (muokkausvalinta != 11);
+                    while (muokkausvalinta != 12);
                 }
                 else if (valinta == 4)
                 {

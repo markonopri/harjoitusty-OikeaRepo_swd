@@ -64,5 +64,63 @@ namespace matkalaskuCore
 
             return korvauksetYhteensä;
         }
-    }
+
+        public double MoottoriveneEnintään50Hv(double kilometrit)
+        {
+            double kmKorvausPerKm = 0.75;
+
+            double korvauksetYhteensä = kilometrit * kmKorvausPerKm;
+
+            return korvauksetYhteensä;
+        }
+        public double MoottoriveneYli50Hv(double kilometrit)
+        {
+            double kmKorvausPerKm = 1.10;
+
+            double KorvauksetYhteensä = kilometrit * kmKorvausPerKm;
+
+            return KorvauksetYhteensä;
+        }
+        public double Moottorikelkka(double kilometrit)
+        {
+            double kmKorvausPerKm = 1.04;
+
+            double KorvauksetYhteensä = kilometrit * kmKorvausPerKm;
+
+            return KorvauksetYhteensä;
+        }
+        public double Mönkijä(double kilometrit)
+        {
+            double kmKorvausPerKm = 0.98;
+
+            double KorvauksetYhteensä = kilometrit * kmKorvausPerKm;
+
+            return KorvauksetYhteensä;
+        }
+        public double Moottoripyörä(double kilometrit)
+        {
+            double kmKorvausPerKm = 0.33;
+
+            double KorvauksetYhteensä = kilometrit * kmKorvausPerKm;
+
+            return KorvauksetYhteensä;
+        }
+        public double Mopo(double kilometrit)
+        {
+            double kmKorvausPerKm = 0.18;
+
+            double KorvauksetYhteensä = kilometrit * kmKorvausPerKm;
+
+            return KorvauksetYhteensä;
+        }
+        public double MuuKulkuneuvo(double kilometrit)
+        {
+            double kmKorvausPerKm = 0.10;
+
+            double KorvauksetYhteensä = kilometrit * kmKorvausPerKm;
+
+            return KorvauksetYhteensä;
+        }
+
+    }   
 }
