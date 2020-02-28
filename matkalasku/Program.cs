@@ -184,6 +184,10 @@ namespace matkalasku
                         Console.WriteLine("");
                     }
 
+                    // Matkalaskun päivämäärä
+                    Console.WriteLine("Matkalaskun päivämäärä: " + matkalaskunLuomisPvm[laskunNumero - 1]);
+                    Console.WriteLine("");
+
                     // Matkan lähtö- ja paluuaika
                     Console.WriteLine("Matkan lähtöaika: " + matkanLähtöaika[laskunNumero - 1]);
                     Console.WriteLine("Matkan paluuaika: " + matkanPaluuaika[laskunNumero - 1]);
@@ -238,12 +242,12 @@ namespace matkalasku
                                 päivät++;
                                 minuutit -= 1440;
                             }
-                            else if (minuutit > 360)
+                            else if (minuutit > 360 && päivät >= 1)
                             {
                                 yliYksiPäiväJaKuusiTuntiaKorvaus += 1;
                                 break;
                             }
-                            else if (minuutit > 120)
+                            else if (minuutit > 120 && päivät >= 1)
                             {
                                 yliYksiPäiväJaKaksiTuntiaKorvaus += 1;
                                 break;
@@ -305,20 +309,11 @@ namespace matkalasku
 
                     // Päivärahakorvauksen laskin
                     Console.WriteLine("");
-                    Console.WriteLine("PÄIVÄRAHAKORVAUKSET:");
+                    Console.WriteLine("PÄIVÄRAHAKORVAUKSET");
                     Console.WriteLine("");
-                    if (yliKuusiTuntiaKorvaus == 1)
-                    {
-                        Console.WriteLine("Kokopäivärahakorvauksia: " + (päivät + yliYksiPäiväJaKuusiTuntiaKorvaus - 1) + " kpl");
-                        Console.WriteLine("Yksikköhinta: " + kokoPäiväRahaHinta + " euroa");
-                        Console.WriteLine("Kokopäivärahojen kokonaishinta: " + ((päivät + yliYksiPäiväJaKuusiTuntiaKorvaus - 1) * kokoPäiväRahaHinta) + " euroa");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Kokopäivärahakorvauksia: " + (päivät + yliYksiPäiväJaKuusiTuntiaKorvaus) + " kpl");
-                        Console.WriteLine("Yksikköhinta: " + kokoPäiväRahaHinta + " euroa");
-                        Console.WriteLine("Kokopäivärahojen kokonaishinta: " + ((päivät + yliYksiPäiväJaKuusiTuntiaKorvaus) * kokoPäiväRahaHinta) + " euroa");
-                    }                    
+                    Console.WriteLine("Kokopäivärahakorvauksia: " + (päivät + yliYksiPäiväJaKuusiTuntiaKorvaus) + " kpl");
+                    Console.WriteLine("Yksikköhinta: " + kokoPäiväRahaHinta + " euroa");
+                    Console.WriteLine("Kokopäivärahojen kokonaishinta: " + ((päivät + yliYksiPäiväJaKuusiTuntiaKorvaus) * kokoPäiväRahaHinta) + " euroa");               
                     Console.WriteLine("");
                     Console.WriteLine("Osapäivärahakorvauksia: " + (yliYksiPäiväJaKaksiTuntiaKorvaus + yliKuusiTuntiaKorvaus) + " kpl");
                     Console.WriteLine("Yksikköhinta: " + osaPäiväRahaHinta + " euroa");
@@ -351,6 +346,10 @@ namespace matkalasku
                             outputFile.WriteLine("------------------------");
                             outputFile.WriteLine("MATKALASKU NRO " + laskunNumero);
                             outputFile.WriteLine("------------------------");
+                            outputFile.WriteLine("");
+
+                            // Matkalaskun päivämäärä
+                            outputFile.WriteLine("Matkalaskun päivämäärä: " + matkalaskunLuomisPvm[laskunNumero - 1]);
                             outputFile.WriteLine("");
 
                             // Matkan lähtö- ja paluuaika

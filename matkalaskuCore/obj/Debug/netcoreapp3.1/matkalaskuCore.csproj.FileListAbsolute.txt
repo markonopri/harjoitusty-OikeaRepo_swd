@@ -13,7 +13,6 @@ C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Deb
 C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Debug\netcoreapp3.1\matkalaskuCore.AssemblyInfo.cs
 C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Debug\netcoreapp3.1\matkalaskuCore.dll
 C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Debug\netcoreapp3.1\matkalaskuCore.pdb
-C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Debug\netcoreapp3.1\matkalaskuCore.csprojAssemblyReference.cache
 C:\Users\Marko\harjoitusty-OikeaRepo_swd\matkalaskuCore\bin\Debug\netcoreapp3.1\matkalaskuCore.deps.json
 C:\Users\Marko\harjoitusty-OikeaRepo_swd\matkalaskuCore\bin\Debug\netcoreapp3.1\matkalaskuCore.dll
 C:\Users\Marko\harjoitusty-OikeaRepo_swd\matkalaskuCore\bin\Debug\netcoreapp3.1\matkalaskuCore.pdb
@@ -22,3 +21,4 @@ C:\Users\Marko\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Debug\netcoreapp3.1\
 C:\Users\Marko\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Debug\netcoreapp3.1\matkalaskuCore.AssemblyInfo.cs
 C:\Users\Marko\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Debug\netcoreapp3.1\matkalaskuCore.dll
 C:\Users\Marko\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Debug\netcoreapp3.1\matkalaskuCore.pdb
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\matkalaskuCore\obj\Debug\netcoreapp3.1\matkalaskuCore.csprojAssemblyReference.cache
