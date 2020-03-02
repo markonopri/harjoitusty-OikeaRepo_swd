@@ -33,13 +33,13 @@ namespace matkalasku
             {
                 int valinta;
                 int muokkausvalinta;
-                ArrayList matkanLähtöaika = new ArrayList();
-                ArrayList matkanPaluuaika = new ArrayList();
+                List<string> matkanLähtöaika = new List<string>();    // tätä muokattu ArrayList matkanLähtöaika = new ArrayList();
+                List<string> matkanPaluuaika = new List<string>();        // tätä muokattu ArrayList matkanPaluuaika = new ArrayList();
                 List<int> matkanKestoMin = new List<int>();
                 List<string> matkanTarkoitus = new List<string>();
                 List<string> matkanLisätiedot = new List<string>();
                 List<string> matkakorvausSaaja = new List<string>();
-                ArrayList matkalaskunLuomisPvm = new ArrayList();
+                List<string> matkalaskunLuomisPvm = new List<string>();     // tätä muokattu ArrayList matkalaskunLuomisPvm = new ArrayList();
                 List<string> reitinKuvaus = new List<string>();
                 List<double> välimatkaKm = new List<double>();
                 List<int> välimatkaKm2 = new List<int>();
@@ -60,7 +60,7 @@ namespace matkalasku
                     Console.WriteLine("1. Lisää uusi matkalasku");
                     Console.WriteLine("2. Näytä matkalasku");
                     Console.WriteLine("3. Matkalaskun muokkaus");
-                    Console.WriteLine("4. Poista matkalasku"); // kesken korjaus!
+                    Console.WriteLine("4. Poista matkalasku"); 
                     Console.WriteLine("5. Lopeta ohjelma");
                     valinta = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("");
@@ -197,6 +197,15 @@ namespace matkalasku
                     Console.WriteLine("-Näytä matkalasku-");
                     Console.WriteLine("------------");
                     Console.WriteLine("");
+                    if (laskujenMäärä == 0)
+                    {
+                        Console.WriteLine("-MATKALASKUJA EI OLE-\n");
+                        Console.WriteLine("-KÄYNNISTÄ OHJELMA UUDELLEEN JA VALITSE TOIMINTO-\n");      // Tein tällaisen koska jos matkalaskuja ei ollut,
+                        break;                                                                         // ja valitsit "näytä matkalaskut" niin ohjelma kaatui
+                                                                                                       // koska kaikki lista olivat tyhjiä.
+                    }
+                    
+                    
                     Console.WriteLine("Matkalaskujen lukumäärä: " + laskujenMäärä);
                     Console.WriteLine("Anna laskun numero");
                     int laskunNumero = Convert.ToInt32(Console.ReadLine());
@@ -207,6 +216,8 @@ namespace matkalasku
                     Console.WriteLine("MATKALASKU NRO " + laskunNumero);
                     Console.WriteLine("------------------------");
                     Console.WriteLine("");
+
+                    
 
                     // Matkalaskun maksettutila [MAKSETTU / EI MAKSETTU]
                     if (matkalaskunStatus[laskunNumero - 1] == 1)
@@ -762,10 +773,202 @@ namespace matkalasku
                 }
                 else if (valinta == 4)
                 {
-                    //Array.Clear(arr, 0, arr.Length); // KESKEN VIELä
+                    Console.WriteLine("-Matkalaskun poistaminen-");
+                    Console.WriteLine("------------");
+                    Console.WriteLine("");
+                    if (laskujenMäärä == 0)
+                    {
+                        Console.WriteLine("-MATKALASKUJA EI OLE-\n");
+                        Console.WriteLine("-KÄYNNISTÄ OHJELMA UUDELLEEN JA VALITSE TOIMINTO-\n");    // Tein tällaisen koska jos matkalaskuja ei ollut,
+                        break;                                                                       // ja valitsit "poista matkalaskuja" niin ohjelma kaatui
+                                                                                                     // koska kaikki lista olivat tyhjiä.
+                    }
+                    Console.WriteLine("Matkalaskujen lukumäärä: " + laskujenMäärä);
+                    Console.WriteLine("Anna laskun numero");
+                    int laskunNumero = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("");
+
+                    // Mikä lasku kyseessä
+                    Console.WriteLine("------------------------");
+                    Console.WriteLine("MATKALASKU NRO " + laskunNumero);
+                    Console.WriteLine("------------------------");
+                    Console.WriteLine("");
+
+                    if (laskunNumero == 1)
+                    {
+
+                        matkanLähtöaika.RemoveAt(0); 
+                        
+                        matkanPaluuaika.RemoveAt(0);
+
+                        matkanKestoMin.RemoveAt(0);
+
+                        matkanTarkoitus.RemoveAt(0);
+
+                        matkanLisätiedot.RemoveAt(0);
+
+                        matkakorvausSaaja.RemoveAt(0);
+
+                        matkalaskunLuomisPvm.RemoveAt(0);
+
+                        reitinKuvaus.RemoveAt(0);
+
+                        välimatkaKm.RemoveAt(0);
+
+                        välimatkaKm2.RemoveAt(0);
+
+                        matkustajienLukumäärä.RemoveAt(0);
+
+                        matkalaskunStatus.RemoveAt(0);
+
+                        muutAjoneuvot.RemoveAt(0);
+
+                        muutAjoneuvotKm.RemoveAt(0);
+
+
+                       laskujenMäärä--;
+                       
+                    }
+                    else if ( laskunNumero == 2)
+                    {
+                        matkanLähtöaika.RemoveAt(1);
+
+                        matkanPaluuaika.RemoveAt(1);
+
+                        matkanKestoMin.RemoveAt(1);
+
+                        matkanTarkoitus.RemoveAt(1);
+
+                        matkanLisätiedot.RemoveAt(1);
+
+                        matkakorvausSaaja.RemoveAt(1);
+
+                        matkalaskunLuomisPvm.RemoveAt(1);
+
+                        reitinKuvaus.RemoveAt(1);
+
+                        välimatkaKm.RemoveAt(1);
+
+                        välimatkaKm2.RemoveAt(1);
+
+                        matkustajienLukumäärä.RemoveAt(1);
+
+                        matkalaskunStatus.RemoveAt(1);
+
+                        muutAjoneuvot.RemoveAt(1);
+
+                        muutAjoneuvotKm.RemoveAt(1);
+
+
+                        laskujenMäärä--;
+                    }
+                    else if (laskunNumero == 3)
+                    {
+                        matkanLähtöaika.RemoveAt(2);
+
+                        matkanPaluuaika.RemoveAt(2);
+
+                        matkanKestoMin.RemoveAt(2);
+
+                        matkanTarkoitus.RemoveAt(2);
+
+                        matkanLisätiedot.RemoveAt(2);
+
+                        matkakorvausSaaja.RemoveAt(2);
+
+                        matkalaskunLuomisPvm.RemoveAt(2);
+
+                        reitinKuvaus.RemoveAt(2);
+
+                        välimatkaKm.RemoveAt(2);
+
+                        välimatkaKm2.RemoveAt(2);
+
+                        matkustajienLukumäärä.RemoveAt(2);
+
+                        matkalaskunStatus.RemoveAt(2);
+
+                        muutAjoneuvot.RemoveAt(2);
+
+                        muutAjoneuvotKm.RemoveAt(2);
+
+
+                        laskujenMäärä--;
+                    }
+                    else if (laskunNumero == 4)
+                    {
+                        matkanLähtöaika.RemoveAt(3);
+
+                        matkanPaluuaika.RemoveAt(3);
+
+                        matkanKestoMin.RemoveAt(3);
+
+                        matkanTarkoitus.RemoveAt(3);
+
+                        matkanLisätiedot.RemoveAt(3);
+
+                        matkakorvausSaaja.RemoveAt(3);
+
+                        matkalaskunLuomisPvm.RemoveAt(3);
+
+                        reitinKuvaus.RemoveAt(3);
+
+                        välimatkaKm.RemoveAt(3);
+
+                        välimatkaKm2.RemoveAt(3);
+
+                        matkustajienLukumäärä.RemoveAt(3);
+
+                        matkalaskunStatus.RemoveAt(3);
+
+                        muutAjoneuvot.RemoveAt(3);
+
+                        muutAjoneuvotKm.RemoveAt(3);
+
+
+                        laskujenMäärä--;
+                    }
+                    else if (laskunNumero == 5)
+                    {
+                        matkanLähtöaika.RemoveAt(4);
+
+                        matkanPaluuaika.RemoveAt(4);
+
+                        matkanKestoMin.RemoveAt(4);
+
+                        matkanTarkoitus.RemoveAt(4);
+
+                        matkanLisätiedot.RemoveAt(4);
+
+                        matkakorvausSaaja.RemoveAt(4);
+
+                        matkalaskunLuomisPvm.RemoveAt(4);
+
+                        reitinKuvaus.RemoveAt(4);
+
+                        välimatkaKm.RemoveAt(4);
+
+                        välimatkaKm2.RemoveAt(4);
+
+                        matkustajienLukumäärä.RemoveAt(4);
+
+                        matkalaskunStatus.RemoveAt(4);
+
+                        muutAjoneuvot.RemoveAt(4);
+
+                        muutAjoneuvotKm.RemoveAt(4);
+
+
+                        laskujenMäärä--;
+                    }
 
                 }
-
+                else 
+                {
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("-VALINTAVIRHE ! VALITSE TOIMINNON NUMERO (0..5)-");
+                    Console.WriteLine("------------------------------------------------");
+                }
 
 
 

@@ -4628,26 +4628,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JoniTanh\\.nuget\\packages\\": {}
+    "/Users/markonopri/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalaskuCoreTests\\matkalaskuCoreTests.csproj",
+      "projectUniqueName": "/Users/markonopri/harjoitusty-OikeaRepo_swd/matkalaskuCoreTests/matkalaskuCoreTests.csproj",
       "projectName": "matkalaskuCoreTests",
-      "projectPath": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalaskuCoreTests\\matkalaskuCoreTests.csproj",
-      "packagesPath": "C:\\Users\\JoniTanh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JoniTanh\\Desktop\\Scrum\\harjoitusty-OikeaRepo_swd\\matkalaskuCoreTests\\obj\\",
+      "projectPath": "/Users/markonopri/harjoitusty-OikeaRepo_swd/matkalaskuCoreTests/matkalaskuCoreTests.csproj",
+      "packagesPath": "/Users/markonopri/.nuget/packages/",
+      "outputPath": "/Users/markonopri/harjoitusty-OikeaRepo_swd/matkalaskuCoreTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\JoniTanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/markonopri/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4692,7 +4690,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
       }
     }
   }

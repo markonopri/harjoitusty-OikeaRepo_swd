@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.matkalasku PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Program.cs" Line="446" Column="71" IsPinned="True" />
+      <File FileName="Program.cs" Line="446" Column="22" IsPinned="True" />
       <File FileName="../matkalaskuCore/matkalaskuLuokat.cs" />
-      <File FileName="../matkalaskuCoreTests/matkalaskuTests.cs" Line="12" Column="58" />
+      <File FileName="../matkalaskuCoreTests/matkalaskuTests.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
