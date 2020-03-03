@@ -3,13 +3,24 @@
      class Tyontekija
     {
 
-        public string tyoNimi { get; set; }
+        private string nimi;
+        private int palkka;
 
-
-        public string tyoPalkka { get; set; }
-
-        public Tyontekija()
+        public Tyontekija(string nimi, int palkka)
         {
+            this.nimi = nimi;
+            this.palkka = palkka;
+        }
+        public string Nimi
+        {
+            get { return nimi; }
+            set { nimi = value; }
+        }
+
+        public int Palkka
+        {
+            get { return palkka; }
+            set { palkka = value; }
         }
     }
 }

@@ -1,0 +1,11 @@
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\bin\Debug\netcoreapp3.1\Palkkalaskenta.exe
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\bin\Debug\netcoreapp3.1\Palkkalaskenta.deps.json
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\bin\Debug\netcoreapp3.1\Palkkalaskenta.runtimeconfig.json
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\bin\Debug\netcoreapp3.1\Palkkalaskenta.runtimeconfig.dev.json
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\bin\Debug\netcoreapp3.1\Palkkalaskenta.dll
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\bin\Debug\netcoreapp3.1\Palkkalaskenta.pdb
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\obj\Debug\netcoreapp3.1\Palkkalaskenta.csprojAssemblyReference.cache
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\obj\Debug\netcoreapp3.1\Palkkalaskenta.AssemblyInfoInputs.cache
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\obj\Debug\netcoreapp3.1\Palkkalaskenta.AssemblyInfo.cs
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\obj\Debug\netcoreapp3.1\Palkkalaskenta.dll
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Palkkalaskenta\Palkkalaskenta\obj\Debug\netcoreapp3.1\Palkkalaskenta.pdb
