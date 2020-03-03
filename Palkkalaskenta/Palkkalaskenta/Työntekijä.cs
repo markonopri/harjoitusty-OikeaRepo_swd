@@ -4,9 +4,9 @@
     {
 
         private string nimi;
-        private int palkka;
+        private double palkka;
 
-        public Tyontekija(string nimi, int palkka)
+        public Tyontekija(string nimi, double palkka)
         {
             this.nimi = nimi;
             this.palkka = palkka;
@@ -17,7 +17,7 @@
             set { nimi = value; }
         }
 
-        public int Palkka
+        public double Palkka
         {
             get { return palkka; }
             set { palkka = value; }
