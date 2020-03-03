@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{62FCA140-E14C-4F57-BECB-075684AB8264}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Palkkalaskenta/Program.cs">
+    <Files>
+      <File FileName="Palkkalaskenta/Program.cs" Line="18" Column="1" />
+      <File FileName="Palkkalaskenta/Työntekijä.cs" Line="7" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Palkkalaskenta FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
