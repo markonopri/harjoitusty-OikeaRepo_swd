@@ -71,7 +71,7 @@ namespace Kilometrikorvaus
             // Palautetaan korvauksien määrä
             if (paivat > 0 && yliYksiPaivaJaKuusiTuntiaKorvaus > 0)
             {
-                korvauksetYhteensa = (paivat * kokoPaivaRahaHinta) + (yliKuusiTuntiaKorvaus * kokoPaivaRahaHinta);
+                korvauksetYhteensa = (paivat * kokoPaivaRahaHinta) + (yliYksiPaivaJaKuusiTuntiaKorvaus * kokoPaivaRahaHinta);
                 return korvauksetYhteensa;
             }
             else if (paivat > 0 && yliYksiPaivaJaKaksiTuntiaKorvaus > 0)
