@@ -13,14 +13,18 @@ namespace Kilometrikorvaus
         private string matkakululistaus;
         private int kilometrit;
         private int paivarahat;
+        private double maksetutKorvaukset;
+        private double maksamattomatKorvaukset;
 
-        public Myyntiedustaja(string nimi, double matkakulut, string matkakululistaus, int kilometrit, int paivarahat)
+        public Myyntiedustaja(string nimi, double matkakulut, string matkakululistaus, int kilometrit, int paivarahat, double maksetutKorvaukset, double maksamattomatKorvaukset)
         {
             this.nimi = nimi;
             this.matkakulut = matkakulut;
             this.matkakululistaus = matkakululistaus;
             this.kilometrit = kilometrit;
             this.paivarahat = paivarahat;
+            this.maksetutKorvaukset = maksetutKorvaukset;
+            this.maksamattomatKorvaukset = maksamattomatKorvaukset;
         }
         public string Nimi
         {
@@ -46,6 +50,16 @@ namespace Kilometrikorvaus
         {
             get { return paivarahat; }
             set { paivarahat = value; }
+        }
+        public double MaksetutKorvaukset
+        {
+            get { return maksetutKorvaukset; }
+            set { maksetutKorvaukset = value;  }
+        }
+        public double MaksamattomatKorvaukset
+        {
+            get { return maksamattomatKorvaukset; }
+            set { maksamattomatKorvaukset = value; }
         }
     }
 }
