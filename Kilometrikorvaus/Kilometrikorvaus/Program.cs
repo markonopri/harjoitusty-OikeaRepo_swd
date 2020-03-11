@@ -80,7 +80,6 @@ namespace Kilometrikorvaus
                         }
 
                         int myyntiedustajaValinta;
-                        string uusiMatkakuluSyote;
                         double uusiMatkakuluSumma;
                     
                         Console.WriteLine("Valitse myyntiedustaja");
@@ -103,16 +102,15 @@ namespace Kilometrikorvaus
                             string matkakuluString = Console.ReadLine();
                             double matkakuluSyote = Convert.ToDouble(matkakuluString);
 
-                            string matkakululistaSyote = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakululistaus + "," + paivamaaraSyote + " : " + matkakuluSyote + " euroa";
+                            string matkakululistaSyote = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakululistaus + "," + "Päivämäärä: " + paivamaaraSyote + " | Matkakulu: " + matkakuluSyote + " euroa";
 
-                            uusiMatkakuluSyote = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakululistaus + matkakululistaSyote;
                             uusiMatkakuluSumma = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakulut + matkakuluSyote;
 
                             Console.WriteLine("");
 
                             string edustajanNimi = myyntiedustajaLista[myyntiedustajaValinta - 1].Nimi;
 
-                            myyntiedustajaLista[myyntiedustajaValinta - 1] = new Myyntiedustaja(edustajanNimi, uusiMatkakuluSumma, uusiMatkakuluSyote);
+                            myyntiedustajaLista[myyntiedustajaValinta - 1] = new Myyntiedustaja(edustajanNimi, uusiMatkakuluSumma, matkakululistaSyote);
 
                         }
                     }
@@ -228,16 +226,21 @@ namespace Kilometrikorvaus
                                     Console.WriteLine("////////////////////////////////////////");
                                     Console.WriteLine("");
                                     Console.WriteLine("Myyntiedustaja: " + myyntiedustajaLista[myyntiedustajaValinta - 1].Nimi);
-                                    Console.WriteLine("Matkakorvauksia yhteensä: " + myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakulut);
-
+                                    Console.WriteLine("Matkakorvauksia yhteensä: " + myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakulut + " euroa");
+                                    
                                     string merkkijono = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakululistaus;
                                     string[] kulut = merkkijono.Split(',');
 
-                                    foreach (var item in kulut)
+                                    Console.WriteLine("");
+                                    Console.WriteLine("----------");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Matkakulut listattuna: ");
+                                    foreach (var kulu in kulut)
                                     {
-                                        Console.WriteLine(item);
+                                        Console.WriteLine(kulu);
                                     }
-
+                                    Console.WriteLine("");
+                                    Console.WriteLine("----------");
 
                                     Console.WriteLine("");
                                     Console.WriteLine("////////////////////////////////////////");

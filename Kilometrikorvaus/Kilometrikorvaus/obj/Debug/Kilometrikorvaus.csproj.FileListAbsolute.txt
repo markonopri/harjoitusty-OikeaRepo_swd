@@ -4,3 +4,9 @@ C:\Users\JoniTanh\source\repos\Kilometrikorvaus\Kilometrikorvaus\bin\Debug\Kilom
 C:\Users\JoniTanh\source\repos\Kilometrikorvaus\Kilometrikorvaus\obj\Debug\Kilometrikorvaus.csprojAssemblyReference.cache
 C:\Users\JoniTanh\source\repos\Kilometrikorvaus\Kilometrikorvaus\obj\Debug\Kilometrikorvaus.exe
 C:\Users\JoniTanh\source\repos\Kilometrikorvaus\Kilometrikorvaus\obj\Debug\Kilometrikorvaus.pdb
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Kilometrikorvaus\Kilometrikorvaus\bin\Debug\Kilometrikorvaus.exe.config
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Kilometrikorvaus\Kilometrikorvaus\bin\Debug\Kilometrikorvaus.exe
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Kilometrikorvaus\Kilometrikorvaus\bin\Debug\Kilometrikorvaus.pdb
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Kilometrikorvaus\Kilometrikorvaus\obj\Debug\Kilometrikorvaus.csprojAssemblyReference.cache
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Kilometrikorvaus\Kilometrikorvaus\obj\Debug\Kilometrikorvaus.exe
+C:\Users\JoniTanh\Desktop\Scrum\harjoitusty-OikeaRepo_swd\Kilometrikorvaus\Kilometrikorvaus\obj\Debug\Kilometrikorvaus.pdb
