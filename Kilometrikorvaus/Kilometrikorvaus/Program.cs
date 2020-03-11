@@ -43,7 +43,7 @@ namespace Kilometrikorvaus
                     string syotettyNimi = Console.ReadLine();
                     Console.WriteLine("");
 
-                    myyntiedustajaLista[myyntiedustajienMaara] = new Myyntiedustaja(syotettyNimi, 0, "");
+                    myyntiedustajaLista[myyntiedustajienMaara] = new Myyntiedustaja(syotettyNimi, 0, "", 0, 0);
                     myyntiedustajienMaara = myyntiedustajienMaara + 1;
                 }
 
@@ -81,6 +81,8 @@ namespace Kilometrikorvaus
 
                         int myyntiedustajaValinta;
                         double uusiMatkakuluSumma;
+                        int uusiKilometriMaara;
+                        int uusiPaivarahaSumma;
                     
                         Console.WriteLine("Valitse myyntiedustaja");
                         myyntiedustajaValinta = Convert.ToInt32(Console.ReadLine());
@@ -102,19 +104,43 @@ namespace Kilometrikorvaus
                             string matkakuluString = Console.ReadLine();
                             double matkakuluSyote = Convert.ToDouble(matkakuluString);
 
-                            string matkakululistaSyote = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakululistaus + "," + "Päivämäärä: " + paivamaaraSyote + " | Matkakulu: " + matkakuluSyote + " euroa";
-
-                            uusiMatkakuluSumma = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakulut + matkakuluSyote;
-
                             Console.WriteLine("");
+                            Console.WriteLine("Syötä matkan pituus (km)");
+                            int kilometrisyote = Convert.ToInt32(Console.ReadLine());
 
-                            string edustajanNimi = myyntiedustajaLista[myyntiedustajaValinta - 1].Nimi;
 
-                            myyntiedustajaLista[myyntiedustajaValinta - 1] = new Myyntiedustaja(edustajanNimi, uusiMatkakuluSumma, matkakululistaSyote);
+                            // TÄSSÄ TÄLLÄ HETKELLÄ
+                            if (kilometrisyote > 15)
+                            {
+                                Console.WriteLine("");
+                                Console.WriteLine("Syötä matkan kesto (min)");
+                                int matkanKestoSyote = Convert.ToInt32(Console.ReadLine());
 
+                                Paivarahalaskuri paivarahaMaara = new Paivarahalaskuri();
+                                int paivarahakorvausMaara = paivarahaMaara.Paivaraha(matkanKestoSyote);
+
+                                string edustajanNimi = myyntiedustajaLista[myyntiedustajaValinta - 1].Nimi;
+                                uusiMatkakuluSumma = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakulut + matkakuluSyote;
+                                string matkakululistaSyote = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakululistaus + ";" + "Päivämäärä: " + paivamaaraSyote + " | Matkakulu: " + matkakuluSyote + " euroa;" +
+                                    "     jonka lisäksi:;     kilometrikorvauksia: " + (kilometrisyote * 0.43) + " euroa;     päivärahakorvauksia: " + paivarahakorvausMaara + " euroa\n";
+                                uusiKilometriMaara = myyntiedustajaLista[myyntiedustajaValinta - 1].Kilometrit + kilometrisyote;
+                                uusiPaivarahaSumma = myyntiedustajaLista[myyntiedustajaValinta - 1].Paivarahat + paivarahakorvausMaara;
+
+                                myyntiedustajaLista[myyntiedustajaValinta - 1] = new Myyntiedustaja(edustajanNimi, uusiMatkakuluSumma, matkakululistaSyote, uusiKilometriMaara, uusiPaivarahaSumma);
+                            }
+                            else
+                            {
+                                string edustajanNimi = myyntiedustajaLista[myyntiedustajaValinta - 1].Nimi;
+                                uusiMatkakuluSumma = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakulut + matkakuluSyote;
+                                string matkakululistaSyote = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakululistaus + ";" + "Päivämäärä: " + paivamaaraSyote + " | Matkakulu: " + matkakuluSyote + " euroa\n";
+                                uusiKilometriMaara = myyntiedustajaLista[myyntiedustajaValinta - 1].Kilometrit + kilometrisyote;
+                                uusiPaivarahaSumma = myyntiedustajaLista[myyntiedustajaValinta - 1].Paivarahat + 0;
+
+                                myyntiedustajaLista[myyntiedustajaValinta - 1] = new Myyntiedustaja(edustajanNimi, uusiMatkakuluSumma, matkakululistaSyote, uusiKilometriMaara, uusiPaivarahaSumma);
+                            }
+                            Console.WriteLine("");
                         }
                     }
-
                     else
                     {
                         Console.WriteLine("Myyntiedustajia ei ole");
@@ -159,7 +185,7 @@ namespace Kilometrikorvaus
                                 {
                                     if (naytaMyyntiedustajat > 0)
                                     {
-                                        Console.WriteLine(myyntiedustajaNumero + ". " + myyntiedustajaLista[i].Nimi + "  " + myyntiedustajaLista[i].Matkakulut + " euroa");
+                                        Console.WriteLine(myyntiedustajaNumero + ". " + myyntiedustajaLista[i].Nimi + "  " + (myyntiedustajaLista[i].Matkakulut + myyntiedustajaLista[i].Kilometrit * 0.43 + myyntiedustajaLista[i].Paivarahat) + " euroa");
                                         myyntiedustajaNumero++;
                                         naytaMyyntiedustajat--;
                                     }
@@ -226,10 +252,14 @@ namespace Kilometrikorvaus
                                     Console.WriteLine("////////////////////////////////////////");
                                     Console.WriteLine("");
                                     Console.WriteLine("Myyntiedustaja: " + myyntiedustajaLista[myyntiedustajaValinta - 1].Nimi);
-                                    Console.WriteLine("Matkakorvauksia yhteensä: " + myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakulut + " euroa");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Matkakorvauksia yhteensä: " + (myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakulut + (myyntiedustajaLista[myyntiedustajaValinta - 1].Kilometrit * 0.43) + myyntiedustajaLista[myyntiedustajaValinta - 1].Paivarahat) + " euroa");
+                                    Console.WriteLine("näistä kilometrikorvauksia: " + (myyntiedustajaLista[myyntiedustajaValinta - 1].Kilometrit * 0.43) + " euroa");
+                                    Console.WriteLine("näistä päivärahakorvauksia: " + myyntiedustajaLista[myyntiedustajaValinta - 1].Paivarahat + " euroa");
                                     
+                                    // Matkakulut yksittäin listattuna
                                     string merkkijono = myyntiedustajaLista[myyntiedustajaValinta - 1].Matkakululistaus;
-                                    string[] kulut = merkkijono.Split(',');
+                                    string[] kulut = merkkijono.Split(';');
 
                                     Console.WriteLine("");
                                     Console.WriteLine("----------");
@@ -241,32 +271,17 @@ namespace Kilometrikorvaus
                                     }
                                     Console.WriteLine("");
                                     Console.WriteLine("----------");
-
                                     Console.WriteLine("");
                                     Console.WriteLine("////////////////////////////////////////");
                                     Console.WriteLine("");
-
-
-
                                 }
-
-
-
                             }
-
-
-
-
                         }
-
                     }
                     while (valinta2 != 3);
-
                 }
-
             }
             while (valinta != 4);
-
         }
     }
 }
