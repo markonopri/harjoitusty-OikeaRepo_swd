@@ -249,6 +249,7 @@ namespace Palkkalaskenta
                         Console.WriteLine("");
                         Console.WriteLine("Tarkasteltavia työntekijöitä ei ole");
                         Console.WriteLine("");
+
                     }
                 }
             }
