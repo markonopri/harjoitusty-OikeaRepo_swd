@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "laskutusohjelma", "laskutus\laskutusohjelma.csproj", "{91E3CDBA-ECAA-4D54-93D4-9B834FAA8306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "laskutusTests", "laskutusTest\laskutusTests.csproj", "{2AE687A8-9092-4CAA-99E1-2E4B8B2BA0AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91E3CDBA-ECAA-4D54-93D4-9B834FAA8306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E3CDBA-ECAA-4D54-93D4-9B834FAA8306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E3CDBA-ECAA-4D54-93D4-9B834FAA8306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E3CDBA-ECAA-4D54-93D4-9B834FAA8306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE687A8-9092-4CAA-99E1-2E4B8B2BA0AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE687A8-9092-4CAA-99E1-2E4B8B2BA0AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE687A8-9092-4CAA-99E1-2E4B8B2BA0AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE687A8-9092-4CAA-99E1-2E4B8B2BA0AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

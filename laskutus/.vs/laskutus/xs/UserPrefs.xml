@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{91E3CDBA-ECAA-4D54-93D4-9B834FAA8306}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="laskutus/Program.cs">
+    <Files>
+      <File FileName="laskutusTest/UnitTest1.cs" Line="18" Column="2" />
+      <File FileName="laskutusTest/laskutus.cs" Line="6" Column="2" />
+      <File FileName="laskutus/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="laskutus" expanded="True">
+            <Node name="laskutus" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+            <Node name="laskutusTests" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.laskutusohjelma PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.laskutusTests FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

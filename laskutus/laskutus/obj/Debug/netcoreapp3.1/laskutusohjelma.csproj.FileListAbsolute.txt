@@ -1,0 +1,10 @@
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutusohjelma.deps.json
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutusohjelma.runtimeconfig.json
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutusohjelma.runtimeconfig.dev.json
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutusohjelma.dll
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutusohjelma.pdb
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutusohjelma.csprojAssemblyReference.cache
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutusohjelma.AssemblyInfoInputs.cache
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutusohjelma.AssemblyInfo.cs
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutusohjelma.dll
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutusohjelma.pdb

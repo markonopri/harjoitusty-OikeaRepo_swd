@@ -1,0 +1,11 @@
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutus
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutus.deps.json
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutus.runtimeconfig.json
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutus.runtimeconfig.dev.json
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutus.dll
+/Users/markonopri/Projects/laskutus/laskutus/bin/Debug/netcoreapp3.1/laskutus.pdb
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutus.AssemblyInfoInputs.cache
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutus.AssemblyInfo.cs
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutus.dll
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutus.pdb
+/Users/markonopri/Projects/laskutus/laskutus/obj/Debug/netcoreapp3.1/laskutus.csprojAssemblyReference.cache
